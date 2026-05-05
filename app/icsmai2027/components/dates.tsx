@@ -82,7 +82,7 @@ export default function Dates() {
                       <CardContent className="p-6">
                         <div className="flex flex-col space-y-2">
                           <div className="flex items-center space-x-2">
-                            <CalendarClock className="h-5 w-5 text-primary" />
+                           /* <CalendarClock className="h-5 w-5 text-primary" />
                             {item.oldDate && (
                               <span className="text-red-500 line-through">{item.oldDate}</span>
                             )}
@@ -97,7 +97,7 @@ export default function Dates() {
                           <h3 className="text-xl font-bold">{item.title}</h3>
                           <p className="text-muted-foreground">{item.description}</p>
                         </div>
-                      </CardContent>
+                      </CardContent>*/
                     </Card>
                   </div>
 
