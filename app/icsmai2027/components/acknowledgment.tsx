@@ -33,7 +33,7 @@ export default function Acknowledgment() {
                 {line}{" "}
                 {index === 1 && (
                   <Link
-                    href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICSMAI2025"
+                    href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICSMAI2027"
                     className="text-blue-800 underline hover:text-blue-900"
                   >
                     Go to CMT Platform
