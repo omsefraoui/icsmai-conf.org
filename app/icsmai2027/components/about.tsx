@@ -81,7 +81,7 @@ export default function About() {
             <div className="flex flex-wrap justify-center gap-4 mt-4">
               <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4 text-primary" />
-                <span>ICSMAI&apos;25</span>
+                <span>ICSMAI&apos;27</span>
               </div>
               <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
@@ -109,7 +109,7 @@ export default function About() {
                 <p>
                   The{" "}
                   <strong>
-                    Second International Conference on Smart Medical, IoT & Artificial Intelligence (ICSMAI&apos;25)
+                    Third International Conference on Smart Medical, IoT & Artificial Intelligence (ICSMAI&apos;27)
                   </strong>{" "}
                   is organized by a collaboration of prestigious institutions, in partnership with LSI Laboratory and the IA2D Association.
                 </p>

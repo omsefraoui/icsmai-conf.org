@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ICSMAI 2025 | The 2nd International Conference on Smart Medical, IoT & Artificial Intelligence",
-  description: "Join us for the International Conference on Smart Medical, IoT & Artificial Intelligence (ICSMAI 2025)",
+  title: "ICSMAI 2027 | The 3rd International Conference on Smart Medical, IoT & Artificial Intelligence",
+  description: "Join us for the International Conference on Smart Medical, IoT & Artificial Intelligence (ICSMAI 2027)",
 };
 
 export default function RootLayout({
