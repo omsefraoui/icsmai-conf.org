@@ -113,7 +113,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              The 2nd International Conference on Smart Medical, IoT & Artificial Intelligence
+              The 3rd International Conference on Smart Medical, IoT & Artificial Intelligence
             </motion.h2>
           </div>
 

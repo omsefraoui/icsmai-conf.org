@@ -7,39 +7,39 @@ import { CalendarClock } from "lucide-react"
 export default function Dates() {
   const timelineItems = [
     {
-      date: "April 10, 2025",
+      date: "June 10, 2027",
       title: "Paper Submission Opens",
       description: "Start submitting your research papers.",
     },
     {
-      oldDate: "September 05, 2025",
-      date: "September 15, 2025",
+      //oldDate: "September 05, 2025",
+      date: "January 20, 2027",
       title: "Paper Submission Deadline",
       description: "Last day to submit your papers for review.",
     },
     {
-      oldDate: "September 05, 2025",
-      date: "September 15, 2025",
+      //oldDate: "September 05, 2025",
+      date: "January 20, 2027",
       title: "Poster Submission Deadline",
       description: "Last day to submit posters.",
     },
     {
-      date: "September 25, 2025",
+      date: "March  01, 2027",
       title: "Notification of Acceptance",
       description: "Authors will be notified of acceptance decisions.",
     },
     {
-      date: "October 05, 2025",
+      date: "March  20, 2027",
       title: "Camera-Ready Submission",
       description: "Deadline for final camera-ready papers.",
     },
     {
-      date: "October 10, 2025",
+      date: "March  30, 2027",
       title: "Early Registration Deadline",
       description: "Last day for early bird registration rates.",
     },
     {
-      date: "October 23-25, 2025",
+      date: "April 22-24, 2027",
       title: "Conference Dates",
       description: "ICSMAI 2025 takes place in Saidia, Morocco.",
     },

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Keynotes() {
   const speakers = [
-    {
+    /*{
       name: "Pr. SHERMIN VOSHMGIR",
       organization: "Vienna University, Austria - Founder of BlockchainHub and  Token Kitchen.",
       location: "Author of the book 'Token Economy'. ",
@@ -18,7 +18,7 @@ export default function Keynotes() {
       image: "/images/keynotes/speaker_16.jpg?height=400&width=400",
       bio: "Shermin is the author of the best selling book Token Economy and the founder of Token Kitchen. In the past she founded BlockchainHub Berlin and was the director of the Research Institute for Cryptoeconomics at the Vienna University of Economics which she also co-founded. Shermin was also a curator of the infamous project TheDAO back in 2016. Shermin studied information systems in Vienna and filmmaking in Madrid. Under her pseudonym KAMIKAT.SE  she has also published her creative works. An Austrian with Iranian roots, she now lives on an olive farm in Portugal, where she works at the intersection of technology, agriculture, art, and social science. Her biggest strength is to make complex issues easily understandable to a wide audience without losing the depth or scope of the issues she writes or talks about. Shermin has a long track record of public speaking about blockchain, cryptocurrencies, Web3 and the future of technologies in general – from prestigious community conferences such as TedX, The Next Web or Re:publica, to private events for companies and institutions such as Vodafone, Audi, IMF and the Worldbank. She has a multidisciplinary perspective of how Web3 will impact different areas of society. She believes that Web3 and its tokenized applications can shift the dynamics of our socio-economic systems. Her focus is to make technology accessible to a non-tech audience so that all those who use technology can also take part in the decision-making process of the technology they use. ",
       topic: "Web3 on the Intersection of Blockchain, AI & IoT",
-    }, 
+    }, */
     {
       name: "Pr. YASSAMINE BENTATA",
       organization: "FMPO, Med 1st University",
@@ -36,15 +36,7 @@ export default function Keynotes() {
       bio: "Professor Moulay Akhloufi holds a Bachelor of Science in Physics from the University Abdelmalek Essaadi (Morocco) and a Bachelor of Engineering from Telecom Saint-Etienne (France). He has a Master's and Ph.D. in Electrical Engineering from Ecole Polytechnique of Montreal and Laval University (Canada), respectively. Additionally, he holds an MBA from Laval University. Currently, Professor Akhloufi is a Computer Science Professor at Université de Moncton. He leads the Perception, Robotics, and Intelligent Machines (PRIME) research lab and serves as the Director of the Center for Artificial Intelligence NB Power. Additionally, he holds the Chair of AI in Healthcare. Before joining Université de Moncton, he acquired significant experience in the industry and technology transfer, particularly in machine vision and robotics. Professor Akhloufi's research expertise spans across the domains of artificial intelligence, computer vision, and intelligent robotic systems, where he has contributed to over two hundred publications. Additionally, he holds the status of a Senior Member of the Institute of Electrical and Electronics Engineers (IEEE). He is also an active member of the Society of Photo-Optical Instrumentation Engineers (SPIE). ",
       topic: "Advances and Challenges in AI for Healthcare",
     }, 
-     {
-      name: "Pr. MOHAMMED MESTARI",
-      organization: " ENSET,  Hassan II University, Casablanca",
-      location: "Mohammedia, Morocco.",
-      image: "/images/keynotes/speaker_18.jpg?height=400&width=400",
-      bio: " Professor Mohammed Mestari is a researcher and academic in the field of artificial intelligence and computational intelligence. He is a Co-founder of the International Neural Network Society (INNS) Morocco Chapter and the IEEE Computational Intelligence Society Morocco Chapter. He also serves as a contributing member of the prestigious editorial board of the IEEE Transactions on Neural Networks and Learning Systems (TNNLS). Professor Mestari’s research spans several high-impact domains within AI, with a strong emphasis on neural networks and their real-world applications. His work focuses on neural network architectures for image classification, data-driven modeling, and the hardware implementation of neural algorithms. He has contributed significantly to the development of high-speed and low-power systems for neural computing, bridging the gap between algorithmic design and efficient embedded deployment. A major area of his theoretical and applied research lies in the hardware-oriented implementation of decomposition-coordination principles for advanced control systems. This includes the optimal control and real-time trajectory planning for autonomous systems such as unmanned aerial vehicles (UAVs) and intelligent robotic platforms. Professor Mestari’s interdisciplinary approach integrates theoretical rigor with practical innovation, contributing to the advancement of intelligent systems in both academia and industry.", 
-      topic: "From Complexity and Network Science to Graph Representation Learning: A Graph Neural Network Approach to Polypharmacy Side Effects",
-    },
-     {
+          {
       name: "Pr. INTISSAR HADDIYA",
       organization: "FMPO, Med 1st University",
       location: "Oujda, Morocco.",
