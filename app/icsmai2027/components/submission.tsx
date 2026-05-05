@@ -212,7 +212,7 @@ export default function Submission() {
                 The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
               </p>
               <p>
-                By submitting to ICSMAI 2025, authors confirm that their work is original, has not been published previously, and is not under consideration elsewhere. Authors agree to abide by the ethical standards and review process of the conference.
+                By submitting to ICSMAI 2027, authors confirm that their work is original, has not been published previously, and is not under consideration elsewhere. Authors agree to abide by the ethical standards and review process of the conference.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild>

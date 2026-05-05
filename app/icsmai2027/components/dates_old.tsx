@@ -82,7 +82,22 @@ export default function Dates() {
                       <CardContent className="p-6">
                         <div className="flex flex-col space-y-2">
                           <div className="flex items-center space-x-2">
-                          
+                           /* <CalendarClock className="h-5 w-5 text-primary" />
+                            {item.oldDate && (
+                              <span className="text-red-500 line-through">{item.oldDate}</span>
+                            )}
+                            <span
+                              className={`${
+                                item.oldDate ? "text-blue-500" : "text-primary"
+                              } font-medium`}
+                            >
+                              {item.date}
+                            </span>
+                          </div>
+                          <h3 className="text-xl font-bold">{item.title}</h3>
+                          <p className="text-muted-foreground">{item.description}</p>
+                        </div>
+                      </CardContent>*/
                     </Card>
                   </div>
 
