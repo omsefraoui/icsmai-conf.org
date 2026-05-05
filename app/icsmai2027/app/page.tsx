@@ -30,7 +30,7 @@ export default function Home() {
       {/*<Acknowledgment/>*/}
       <Dates />
       <Registration />
-      <Program />
+     {/* <Program /> */}
       <Sponsors />
       <Contact />
     </main>
