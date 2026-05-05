@@ -49,7 +49,7 @@ export default function Footer() {
               <span className="font-bold text-lg">ICSMAI 2027</span>
             </div>
             <p className="text-hero-muted">
-            The 2nd International Conference on Smart Medical, IoT & Artificial Intelligence
+            3rd International Conference on Smart Medical, IoT & Artificial Intelligence
             </p>
             <p className="text-hero-muted">
               April 22-24, 2027

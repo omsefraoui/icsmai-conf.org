@@ -24,9 +24,10 @@ export default function Committees() {
       "Pr. Kamal GHOUMID, ENSAO, Oujda, Morocco",
     ],
     "GENERAL CO-CHAIRS": [
-      "Pr. Mohamed LAZAAR, ENSIAS, Rabat, Morocco",
+      "Pr. Omar SEFRAOUI, ENSAO, Oujda, Morocco",
+      /*"Pr. Mohamed LAZAAR, ENSIAS, Rabat, Morocco",
       "Pr. Khalid HADDOUCH, ENSAF, FEZ, Morocco",
-      "Pr. Réda YAHIAOUI, Marie and louis Pasteur University, France",
+      "Pr. Réda YAHIAOUI, Marie and louis Pasteur University, France",*/
       "Pr. Omar ELMAZRIA, Université de lorraine , Nancy, France",
       
       //"K. GHOUMID, ENSAO, Med 1st University, Oujda, Morocco",
@@ -36,7 +37,7 @@ export default function Committees() {
       //"R. YAHIAOUI, Franche-Comté Univ. Besançon, France",
     ],
     "LOCAL ORGANIZING COMMITTEE": [
-      "H. Barboucha, ENSAO, Oujda, Morocco",
+     /* "H. Barboucha, ENSAO, Oujda, Morocco",
       "S. Daoudi, FSO, Oujda, Morocco",
       "O. Sefraoui, ENSAO, Oujda, Morocco",
       "H. Bouali, ESTO, Oujda, Morocco",
@@ -92,7 +93,7 @@ export default function Committees() {
       "F. BENKHALDOUN, Sorbonne Paris Nord University, France",
     ],*/
     "STUDENT COMMITTEE": [
-      "R. Ghafir, UMP, Oujda, Morocco",
+      //"R. Ghafir, UMP, Oujda, Morocco",
       "R. Baba, UMP, Oujda, Morocco",
       /*"Y. EL KANEB, UMP, Oujda, Morocco",
       "M. RAHMOUNI, UMP, Oujda, Morocco",
@@ -110,7 +111,7 @@ export default function Committees() {
     ],
     "TECHNICAL PROGRAM COMMITTEE": [
       "Mrunal Gangrade  VP JPMorgan Chase & Co. Floride, USA",
-      "I. LAJOIE, Marie and louis Pasteur University, France",
+      /*"I. LAJOIE, Marie and louis Pasteur University, France",
       "Navom Saxena,  Meta, New York, USA",
       "F. AUBER, Marie and louis Pasteur University, France",
       "Sunil Kumar Gurram,   Californie, USA",
@@ -196,7 +197,7 @@ export default function Committees() {
       //"Y. KHLIFI, ENSAO, Med. UMP, Oujda, Morocco",
       //"H. BARBOUCHA, ENSAO, Med. UMP, Oujda, Morocco",
       //"M. BENHADDOU, ENA, Oujda, Morocco",
-      /*"A. BENBRIKE, FS, Oujda, Morocco",*/
+      /*"A. BENBRIKE, FS, Oujda, Morocco",
       "R. CHIKH, ENSA, Oujda, Morocco",
       "A. ABBADI, ENSA, Oujda, Morocco",
       //"R. KORIKACHE, ESTO, UMP, Oujda, Morocco",
@@ -222,19 +223,19 @@ export default function Committees() {
       "I. Bouabdallah, CRMEF Oujda, Morocco",
       "F. Falyouni, FSO Oujda, Morocco",
       "M. Merzougui, UMP Oujda, Morocco",
-      "S. MAZOUZ, FSO, UMP, Oujda, Morocco",*/
+      "S. MAZOUZ, FSO, UMP, Oujda, Morocco",
       "B. Al-Mahdawi, TCE, MT University, Baghdad, IRAQ",
       "A. Al-Azzawi, TCE, MT University, Baghdad, IRAQ",
       "A. Abdulazeez, CS, Al-Mustansiriyah University, Baghdad, IRAQ",
       /*"A. Moussa, FSO, UMP, Oujda, Morocco",
       "A. Ghadbane, FSO, UMP, Oujda, Morocco",*/
-      "A. BENLGHAZI, ENSAO, Oujda, Morocco",
+      //"A. BENLGHAZI, ENSAO, Oujda, Morocco",
       //"Z. Bougroune, ENSAO, Oujda, Morocco",
       //"K. AZGHIOU, ENSAO, Oujda, Morocco",
-      "E. H. SEBBAR, FMPO, UMP, Oujda, Morocco",
+     /* "E. H. SEBBAR, FMPO, UMP, Oujda, Morocco",
       "D. EL MOUJTAHIDE, FMPO, UMP, Oujda, Morocco",
       "A. SADDARI, FMPO, UMP, Oujda, Morocco",
-      "M Benheddi, FMPO, UMP, Oujda, Morocco",
+      "M Benheddi, FMPO, UMP, Oujda, Morocco",*/
     ],
   }
 
@@ -289,7 +290,7 @@ export default function Committees() {
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Committees</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              The dedicated team of professionals organizing and guiding ICSMAI 2025.
+              The dedicated team of professionals organizing and guiding ICSMAI 2027.
             </p>
           </motion.div>
 

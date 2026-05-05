@@ -7,7 +7,7 @@ import Topics from "../components/topics"
 import Submission from "../components/submission"
 import Dates from "../components/dates"
 import Registration from "../components/registration"
-import Program from "../components/program"
+//import Program from "../components/program"
 import Sponsors from "../components/sponsors"
 import Contact from "../components/contact"
 
