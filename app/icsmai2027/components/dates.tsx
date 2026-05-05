@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "../components/ui/card"
 import { CalendarClock } from "lucide-react"
 
 export default function Dates() {
@@ -41,7 +41,7 @@ export default function Dates() {
     {
       date: "April 22-24, 2027",
       title: "Conference Dates",
-      description: "ICSMAI 2025 takes place in Saidia, Morocco.",
+      description: "ICSMAI 2027 takes place in Saidia, Morocco.",
     },
   ]
 
@@ -58,7 +58,7 @@ export default function Dates() {
           <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">Important Dates</div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Conference Timeline</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Mark your calendar with these important dates for ICSMAI 2025.
+            Mark your calendar with these important dates for ICSMAI 2027.
           </p>
         </motion.div>
 

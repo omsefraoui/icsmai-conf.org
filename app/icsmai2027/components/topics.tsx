@@ -205,7 +205,7 @@ export default function Topics() {
           <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">Conference Topics</div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Topics of Interest</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            ICSMAI 2025 welcomes submissions in the following areas, but is not limited to:
+            ICSMAI 2027 welcomes submissions in the following areas, but is not limited to:
           </p>
         </motion.div>
 
