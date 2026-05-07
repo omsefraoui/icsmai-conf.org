@@ -18,7 +18,7 @@ export default function Keynotes() {
       image: "/images/keynotes/speaker_17.jpg?height=400&width=400",
       bio: " Professor Yassamine Bentata is a  Professor at the Faculty of Medicine and Pharmacy of Oujda, Mohammed First University. Since 2014, she has headed the Nephrology, Dialysis and Renal Transplantation Department at Mohammed VI University Hospital in Oujda. She holds a PhD in Epidemiology of Medical and Surgical Sciences from Souissi University, Rabat (2016), with research focused on diabetic nephropathy progression. She directs the Laboratory of Epidemiology, Clinical Research, and Public Health. A board member of the Moroccan Society of Nephrology since 2018, she became its Secretary General in 2024. She serves as an expert evaluator for the CNRST and ANEAQ. Former Vice Dean for Academic Affairs (2013–2021), she has supervised numerous doctoral theses and regularly chairs PhD defense juries. Professor Bentata's the corresponding author of many international publications and actively contributes to clinical research and medical education in Morocco. ", 
       topic: "The Future of Medicine: Horizons and Limits!",
-    },
+    }
    /* {
       name: "Pr. MOULAY AKHLOUFI",
       organization: "Université de Moncton",
@@ -43,7 +43,7 @@ export default function Keynotes() {
       image: "/images/keynotes/speaker_14.jpg?height=400&width=400",
       bio: "Leading researcher in deep learning and computer vision with over 100 publications.",
       topic: "Telemedicine: experience in the Eastern region",
-    }  
+    }  */
     
   ]
 
