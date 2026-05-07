@@ -10,15 +10,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Keynotes() {
   const speakers = [
-    /*{
-      name: "Pr. SHERMIN VOSHMGIR",
-      organization: "Vienna University, Austria - Founder of BlockchainHub and  Token Kitchen.",
-      location: "Author of the book 'Token Economy'. ",
-     // image: "/placeholder.svg?height=400&width=400",
-      image: "/images/keynotes/speaker_16.jpg?height=400&width=400",
-      bio: "Shermin is the author of the best selling book Token Economy and the founder of Token Kitchen. In the past she founded BlockchainHub Berlin and was the director of the Research Institute for Cryptoeconomics at the Vienna University of Economics which she also co-founded. Shermin was also a curator of the infamous project TheDAO back in 2016. Shermin studied information systems in Vienna and filmmaking in Madrid. Under her pseudonym KAMIKAT.SE  she has also published her creative works. An Austrian with Iranian roots, she now lives on an olive farm in Portugal, where she works at the intersection of technology, agriculture, art, and social science. Her biggest strength is to make complex issues easily understandable to a wide audience without losing the depth or scope of the issues she writes or talks about. Shermin has a long track record of public speaking about blockchain, cryptocurrencies, Web3 and the future of technologies in general – from prestigious community conferences such as TedX, The Next Web or Re:publica, to private events for companies and institutions such as Vodafone, Audi, IMF and the Worldbank. She has a multidisciplinary perspective of how Web3 will impact different areas of society. She believes that Web3 and its tokenized applications can shift the dynamics of our socio-economic systems. Her focus is to make technology accessible to a non-tech audience so that all those who use technology can also take part in the decision-making process of the technology they use. ",
-      topic: "Web3 on the Intersection of Blockchain, AI & IoT",
-    }, 
+    
     {
       name: "Pr. YASSAMINE BENTATA",
       organization: "FMPO, Med 1st University",
@@ -27,7 +19,7 @@ export default function Keynotes() {
       bio: " Professor Yassamine Bentata is a  Professor at the Faculty of Medicine and Pharmacy of Oujda, Mohammed First University. Since 2014, she has headed the Nephrology, Dialysis and Renal Transplantation Department at Mohammed VI University Hospital in Oujda. She holds a PhD in Epidemiology of Medical and Surgical Sciences from Souissi University, Rabat (2016), with research focused on diabetic nephropathy progression. She directs the Laboratory of Epidemiology, Clinical Research, and Public Health. A board member of the Moroccan Society of Nephrology since 2018, she became its Secretary General in 2024. She serves as an expert evaluator for the CNRST and ANEAQ. Former Vice Dean for Academic Affairs (2013–2021), she has supervised numerous doctoral theses and regularly chairs PhD defense juries. Professor Bentata's the corresponding author of many international publications and actively contributes to clinical research and medical education in Morocco. ", 
       topic: "The Future of Medicine: Horizons and Limits!",
     },
-    {
+   /* {
       name: "Pr. MOULAY AKHLOUFI",
       organization: "Université de Moncton",
       location: "Moncton, Canada.",
@@ -51,96 +43,8 @@ export default function Keynotes() {
       image: "/images/keynotes/speaker_14.jpg?height=400&width=400",
       bio: "Leading researcher in deep learning and computer vision with over 100 publications.",
       topic: "Telemedicine: experience in the Eastern region",
-    },
-    {
-      name: "Pr. MOHAMMED CHOUKRI",
-      organization: "FMPO, Med 1st University",
-      location: "Oujda, Morocco.",
-      image: "/images/keynotes/speaker_15.jpg?height=400&width=400",
-      bio: "Pioneer in reinforcement learning and robotics with 20+ years of experience.",
-      topic: "Reinforcement Learning for Autonomous Systems",
-    },
-   
-    {
-      name: "Pr. Abdelhadi Zahouani",
-      organization: "Evolina Health Group",
-      location: "France.",
-      image: "/images/keynotes/speaker_6.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Pr. Maria Simona Raboaca",
-      organization: "NRD Institute, Valcea",
-      location: "Romania",
-      image: "/images/keynotes/speaker_9.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Pr. Mostafa AZIZI",
-      organization: " UMP, Oujda",
-      location: "Morocco.",
-      image: "/images/keynotes/speaker_7.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Pr. Cyril DROCOURT",
-      organization: "Picardie Jules Verne University",
-      location: "Amiens, France.",
-      image: "/images/keynotes/speaker_8.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Pr. Madhusanka Liyanage",
-      organization: "University College",
-      location: " Dublin, Ireland.",
-      image: "/images/keynotes/speaker_4.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Pr. Hassine Mohammed",
-      organization: "TisaLabs, Cork",
-      location: "Ireland.",
-      image: "/images/keynotes/speaker_10.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Pr.  Ahmed MOSTEFAOUI",
-      organization: "University of Franche Comte",
-      location: "France.",
-      image: "/images/keynotes/speaker_12.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Pr. Sultan Aljahdali",
-      organization: "Taif University,",
-      location: "Taif Saudi Arabia.",
-      image: "/images/keynotes/speaker_13.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Pr. Azzedine Boukerche",
-      organization: "University of Ottawa, Ontario",
-      location: "Canada.",
-      image: "/images/keynotes/speaker_1.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },
-    {
-      name: "Dr. Salah Hanim",
-      organization: "Ford Motor Company",
-      location: "USA.",
-      image: "/images/keynotes/speaker_2.jpg?height=400&width=400",
-      bio: "Leading work on large language models and AI alignment.",
-      topic: "Aligning AI Systems with Human Values",
-    },*/
+    }  
+    
   ]
 
 
