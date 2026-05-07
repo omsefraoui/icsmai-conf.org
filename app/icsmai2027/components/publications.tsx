@@ -115,7 +115,7 @@ export default function Publications() {
                   {/* Book Description */}
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-medium">ICSMAI 2025 Proceedings</span> - Your research will be part of this
+                      <span className="font-medium">ICSMAI 2027 Proceedings</span> - Your research will be part of this
                       prestigious international publication
                     </p>
                   </div>
