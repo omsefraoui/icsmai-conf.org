@@ -216,7 +216,7 @@ export default function Submission() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild>
-                  <Link href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICSMAI2025" target="_blank" rel="noreferrer noopener" className="flex items-center gap-2">
+                  <Link href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICSMAI2027" target="_blank" rel="noreferrer noopener" className="flex items-center gap-2">
                     Go to CMT Platform
                     <ExternalLink className="h-4 w-4" />
                   </Link>
