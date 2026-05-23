@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { motion, useAnimation, useInView, useScroll, useTransform } from "motion/react"
+import { motion, useInView, useScroll, useTransform } from "motion/react"
 import { Button } from "@/components/ui/button"
 import { Calendar, Users, Globe, MapPin, ChevronDown, FileText, Boxes } from "lucide-react"
 import Link from "next/link"
@@ -9,27 +9,25 @@ import { AnimatedNumber } from "./motion-primitives/animated-number"
 import Image from "next/image"
 
 export default function Hero() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: false })
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: false, amount: 0.2 })
   const [values, setValues] = useState([0, 0])
-  const controls = useAnimation()
+  
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const y = useTransform(scrollYProgress, [0, 1], [0, 250])
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   useEffect(() => {
-    setValues([300, 20, 25])
+    // Simulating API/Hydration delay beautifully matching the entry animation
+    const timer = setTimeout(() => {
+      setValues([300, 20])
+    }, 400)
+    return () => clearTimeout(timer)
   }, [])
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible")
-    }
-  }, [controls, isInView])
 
   const stats = [
     { icon: <Users className="h-5 w-5" />, value: values[0], label: "Attendees" },
@@ -41,199 +39,179 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="w-full min-h-[100vh] flex flex-col items-center justify-center relative overflow-hidden bg-slate-900 text-blue-100 hero-section"
+      className="w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-slate-950 text-slate-100 selection:bg-blue-500/30 selection:text-white"
     >
-      {/* Image Background */}
+      {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero.jpeg"
-          alt="Conference background"
+          src="/images/hero.png" // Path to your generated background image
+          alt="Conference Hall with Digital Network"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 backdrop-blur-sm bg-slate-900/40" />
+        {/* Modern Blur and Overlay for Text Legibility */}
+        <div className="absolute inset-0 backdrop-blur-sm bg-slate-950/70" />
       </div>
 
-      <motion.div className="container px-4 md:px-6 relative z-10" style={{ y, opacity }}>
-        <div className="flex flex-col items-center text-center space-y-8">
-          {/* Animated conference badge */}
+      <motion.div 
+        className="container px-4 md:px-6 relative z-10 w-full max-w-5xl mx-auto" 
+        style={{ y, opacity }}
+      >
+        <div className="flex flex-col items-center text-center space-y-10">
+          
+          {/* Animated Conference Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full transform scale-110 breathing-shadow" />
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative bg-white/5 backdrop-blur-lg border shadow-xl rounded-full px-6 py-3 text-blue-50 font-medium text-lg flex items-center gap-2 border-blue-400/30"
+              whileHover={{ y: -2 }}
+              className="relative bg-slate-900/60 backdrop-blur-xl border shadow-2xl shadow-blue-500/5 rounded-full px-5 py-2 text-blue-200 text-sm md:text-base font-medium flex items-center gap-2.5 border-blue-500/20"
             >
-              <Calendar className="h-4 w-4 text-blue-300" />
-              <span className="relative overflow-hidden">
-                <span className="relative">April 22-24, 2027</span>
-              </span>
+              <Calendar className="h-4 w-4 text-blue-400" />
+              <span className="tracking-wide">April 22-24, 2027</span>
             </motion.div>
           </motion.div>
 
-          {/* Main title */}
-          <div className="space-y-4 mt-6">
-            <div className="flex items-baseline justify-center">
-              <div className="flex items-baseline cursor-default">
+          {/* Main Title / Acronym Area */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-center tracking-tight select-none">
+              <div className="flex items-center justify-center flex-wrap gap-1 md:gap-2">
                 {letters.map((letter, index) => (
                   <motion.span
                     key={index}
-                    initial={{ y: 20, opacity: 0 }}
+                    initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.05 * index, ease: "easeOut" }}
-                    whileHover={{ y: -5 }}
-                    className="text-6xl md:text-8xl lg:text-9xl font-black text-white glow-text"
+                    transition={{ duration: 0.6, delay: 0.04 * index, ease: [0.16, 1, 0.3, 1] }}
+                    whileHover={{ scale: 1.1, color: '#38bdf8' }}
+                    className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white cursor-default transition-colors duration-200"
                     style={{
-                      textShadow:
-                        "0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3)",
+                      textShadow: "0 4px 20px rgba(14, 165, 233, 0.2)",
                     }}
                   >
                     {letter}
                   </motion.span>
                 ))}
+                
                 <motion.span
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.35, ease: "easeOut" }}
-                  className="text-4xl md:text-6xl lg:text-7xl font-bold text-blue-200 ml-4"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400 ml-2 md:ml-4"
                 >
                   2027
                 </motion.span>
               </div>
             </div>
 
-            <motion.h2
-              className="text-xl md:text-2xl lg:text-3xl text-blue-50/90 max-w-3xl mx-auto mt-6 leading-relaxed font-light text-balance tracking-wide"
-              initial={{ opacity: 0, y: 20 }}
+            {/* Sub-headline */}
+            <motion.h1
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300 max-w-3xl mx-auto mt-6 leading-relaxed font-normal tracking-wide text-balance px-2"
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
-              The 3rd International Conference on Smart Medical, IoT & Artificial Intelligence
-            </motion.h2>
+              The 3rd International Conference on <span className="text-white font-semibold">Smart Medical</span>, <span className="text-blue-400 font-semibold">IoT</span> & <span className="text-indigo-400 font-semibold">Artificial Intelligence</span>
+            </motion.h1>
           </div>
 
-          {/* Highlight bar */}
+          {/* Sleek Gradient Separator Line */}
           <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="h-0.5 w-24 bg-gradient-to-r from-blue-300 to-blue-600 rounded-full overflow-hidden relative"
-          >
-            <motion.div
-              className="absolute inset-0 bg-white/50"
-              animate={{ x: ["-100%", "100%"] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            />
-          </motion.div>
+            initial={{ width: 0 }}
+            animate={{ width: "96px" }}
+            transition={{ duration: 1, delay: 0.7, ease: "easeInOut" }}
+            className="h-[3px] bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 rounded-full shadow-[0_0_12px_rgba(56,189,248,0.3)]"
+          />
 
-          {/* Stats */}
+          {/* Stats & Location Blocks */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-8 md:gap-16 py-8"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col items-center gap-3 group"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <div className="p-4 rounded-full bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl text-blue-300 group-hover:text-blue-100 transition-all duration-300 relative">
-                  <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="relative">{stat.icon}</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-3xl font-bold text-white flex items-center gap-1">
-                    <AnimatedNumber
-                      value={stat.value}
-                      springOptions={{ bounce: 0, duration: 2000 }}
-                      className="tracking-tight"
-                    />
-                    <span className="text-blue-400">+</span>
-                  </span>
-                  <span className="text-sm text-blue-200 font-medium tracking-wide">{stat.label}</span>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Map Pin */}
-            <motion.div
-              className="flex flex-col items-center gap-3 group"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <div className="p-4 rounded-full bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl text-blue-300 group-hover:text-blue-100 transition-all duration-300 relative">
-                <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <MapPin className="h-5 w-5 relative" />
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold text-white flex items-center gap-1">Saidia</span>
-                <span className="text-sm text-blue-200 font-medium tracking-wide">Morocco</span>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* CTA buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-5 mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="grid grid-cols-3 gap-4 sm:gap-8 md:gap-16 items-center justify-center max-w-2xl w-full pt-4"
+          >
+            {stats.map((stat, index) => (
+              <div key={index} className="flex flex-col items-center gap-2 group cursor-default">
+                <div className="p-3.5 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800 text-blue-400 group-hover:text-blue-300 group-hover:border-blue-500/30 group-hover:bg-slate-900/80 transition-all duration-300 shadow-xl">
+                  {stat.icon}
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight flex items-center">
+                    <AnimatedNumber
+                      value={stat.value}
+                      springOptions={{ bounce: 0, duration: 1500 }}
+                    />
+                    <span className="text-blue-400 font-bold ml-0.5">+</span>
+                  </span>
+                  <span className="text-xs sm:text-sm text-slate-400 font-medium tracking-wider uppercase mt-0.5">{stat.label}</span>
+                </div>
+              </div>
+            ))}
+
+            {/* Map Pin Location Block */}
+            <div className="flex flex-col items-center gap-2 group cursor-default">
+              <div className="p-3.5 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800 text-indigo-400 group-hover:text-indigo-300 group-hover:border-indigo-500/30 group-hover:bg-slate-900/80 transition-all duration-300 shadow-xl">
+                <MapPin className="h-5 w-5" />
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">Saidia</span>
+                <span className="text-xs sm:text-sm text-slate-400 font-medium tracking-wider uppercase mt-0.5">Morocco</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CTA Group Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto pt-4"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
           >
             <Button
               size="lg"
-              className="group relative overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 shadow-lg shadow-blue-600/20 transition-all duration-300 hover:shadow-blue-600/40 border-0"
+              className="w-full sm:w-auto min-w-[170px] bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium rounded-xl px-7 py-6 shadow-lg shadow-blue-600/20 hover:shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 border-0 group"
               asChild
             >
-              <Link href="#registration" className="btn-hover-effect">
-                <span className="relative z-10 flex items-center gap-2">
-                  <Boxes className="h-5 w-5 transition-transform group-hover:scale-110 duration-300" />
-                  Register Now
-                </span>
+              <Link href="#registration">
+                <Boxes className="mr-2 h-4 w-4 opacity-80 group-hover:scale-110 transition-transform duration-200" />
+                Register Now
               </Link>
             </Button>
+            
             <Button
               size="lg"
               variant="outline"
-              className="group relative overflow-hidden border border-blue-400/30 text-blue-300 hover:text-blue-100 px-8 py-6 bg-blue-500/5 hover:bg-blue-500/10 transition-all duration-300 shadow-lg shadow-blue-900/10"
+              className="w-full sm:w-auto min-w-[170px] bg-slate-900/40 backdrop-blur-md border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white hover:bg-slate-900/80 font-medium rounded-xl px-7 py-6 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
               asChild
             >
-              <Link href="#submission" className="btn-hover-effect">
-                <span className="relative z-10 flex items-center gap-2">
-                  <FileText className="h-5 w-5 transition-transform group-hover:scale-110 duration-300" />
-                  Submit Paper
-                </span>
+              <Link href="#submission">
+                <FileText className="mr-2 h-4 w-4 opacity-80 group-hover:scale-110 transition-transform duration-200" />
+                Submit Paper
               </Link>
             </Button>
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Elegant Infinite Scroll-Down Indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
       >
         <Link
           href="#about"
-          className="flex flex-col items-center text-blue-300 hover:text-blue-100 transition-colors"
+          className="flex flex-col items-center text-slate-500 hover:text-blue-400 transition-colors duration-200 group"
         >
           <motion.div
-            className="p-3 rounded-full bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl"
-            whileHover={{ y: 5, scale: 1.1 }}
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
+            className="p-2.5 rounded-full bg-slate-900/80 border border-slate-800 group-hover:border-blue-500/30 shadow-xl"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
           >
-            <ChevronDown className="h-5 w-5" />
+            <ChevronDown className="h-4 w-4" />
           </motion.div>
         </Link>
       </motion.div>
