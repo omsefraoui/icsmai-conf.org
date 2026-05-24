@@ -43,7 +43,7 @@ export default function Banner() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      variants={fadeIn}
+      variants={fadeIn as any}
       className="relative h-full min-h-[460px] rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 bg-white/70 backdrop-blur-xl border border-slate-200/80 shadow-xl shadow-slate-200/50 group"
     >
       {/* Soft Ambient Light Glows */}
