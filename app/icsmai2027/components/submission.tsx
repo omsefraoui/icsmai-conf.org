@@ -104,7 +104,7 @@ export default function Submission() {
                     <Button className="flex items-center gap-2" asChild>
                       <Link href="https://resource-cms.springernature.com/springer-cms/rest/v1/content/19338734/data/v1" target="_blank" rel="noreferrer noopener">
                         <Download className="h-4 w-4" />
-                        Download LNCS Word Template
+                        Download LNNS Word Template
                         <ExternalLink className="h-3 w-3" />
                       </Link>
                     </Button>

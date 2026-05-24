@@ -29,7 +29,7 @@ export default function About() {
     },
     {
       icon: <Network className="h-10 w-10 text-primary" />,
-      title: "Smart Systems",
+      title: "Smart Systems & IoMT",
       description: "Innovative approaches to smart medical systems, IoT, and cyber-physical systems for healthcare.",
     },
     {
