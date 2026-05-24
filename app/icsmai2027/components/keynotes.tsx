@@ -12,23 +12,31 @@ export default function Keynotes() {
   const speakers = [
     
     {
+      name: "Pr. Omar ELMAZRIA", Pr. Omar ELMAZRIA, Université de lorraine , Nancy, France
+      organization: "Université de lorraine ",
+      location: "Nancy, France.",
+      image: "/images/keynotes/speaker_19.jpg?height=400&width=400",
+      bio: "  ... ", 
+      topic: ".........",
+    },
+    {
       name: "Pr. YASSAMINE BENTATA",
       organization: "FMPO, Med 1st University",
       location: "Oujda, Morocco.",
       image: "/images/keynotes/speaker_17.jpg?height=400&width=400",
       bio: " Professor Yassamine Bentata is a  Professor at the Faculty of Medicine and Pharmacy of Oujda, Mohammed First University. Since 2014, she has headed the Nephrology, Dialysis and Renal Transplantation Department at Mohammed VI University Hospital in Oujda. She holds a PhD in Epidemiology of Medical and Surgical Sciences from Souissi University, Rabat (2016), with research focused on diabetic nephropathy progression. She directs the Laboratory of Epidemiology, Clinical Research, and Public Health. A board member of the Moroccan Society of Nephrology since 2018, she became its Secretary General in 2024. She serves as an expert evaluator for the CNRST and ANEAQ. Former Vice Dean for Academic Affairs (2013–2021), she has supervised numerous doctoral theses and regularly chairs PhD defense juries. Professor Bentata's the corresponding author of many international publications and actively contributes to clinical research and medical education in Morocco. ", 
-      topic: "The Future of Medicine: Horizons and Limits!",
-    }
-   /* {
+      topic: ".........",
+    },
+    {
       name: "Pr. MOULAY AKHLOUFI",
       organization: "Université de Moncton",
       location: "Moncton, Canada.",
      // image: "/placeholder.svg?height=400&width=400",
       image: "/images/keynotes/MoulayAKHLOUFI.jpg?height=400&width=400",
       bio: "Professor Moulay Akhloufi holds a Bachelor of Science in Physics from the University Abdelmalek Essaadi (Morocco) and a Bachelor of Engineering from Telecom Saint-Etienne (France). He has a Master's and Ph.D. in Electrical Engineering from Ecole Polytechnique of Montreal and Laval University (Canada), respectively. Additionally, he holds an MBA from Laval University. Currently, Professor Akhloufi is a Computer Science Professor at Université de Moncton. He leads the Perception, Robotics, and Intelligent Machines (PRIME) research lab and serves as the Director of the Center for Artificial Intelligence NB Power. Additionally, he holds the Chair of AI in Healthcare. Before joining Université de Moncton, he acquired significant experience in the industry and technology transfer, particularly in machine vision and robotics. Professor Akhloufi's research expertise spans across the domains of artificial intelligence, computer vision, and intelligent robotic systems, where he has contributed to over two hundred publications. Additionally, he holds the status of a Senior Member of the Institute of Electrical and Electronics Engineers (IEEE). He is also an active member of the Society of Photo-Optical Instrumentation Engineers (SPIE). ",
-      topic: "Advances and Challenges in AI for Healthcare",
+      topic: "----------",
     }, 
-          {
+         /* {
       name: "Pr. INTISSAR HADDIYA",
       organization: "FMPO, Med 1st University",
       location: "Oujda, Morocco.",
