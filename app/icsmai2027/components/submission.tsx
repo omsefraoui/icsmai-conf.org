@@ -22,9 +22,9 @@ export default function Submission() {
   }
 
   const guidelines = [
-    "All submissions must follow the LNCS template and be written in English.",
+    "All submissions must follow the LNNS template and be written in English.",
     "Full papers are allowed a maximum of 8 pages.",
-    "Authors will pay additional fees for each extra page (20 euros per page, up to 7 extra pages) in the LNCS format, excluding bibliographic references.",
+    "Authors will pay additional fees for each extra page (20 euros per page, up to 7 extra pages) in the LNNS format, excluding bibliographic references.",
     "Papers exceeding these limits may be rejected without review. A clearly marked appendix can be included for supplementary materials, but the appendix will be read at the discretion of the reviewers; therefore, the main body of the paper should contain sufficient details to assess its contributions.",
     "All papers must be submitted on the Microsoft CMT platform.",
   ]

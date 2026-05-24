@@ -111,7 +111,7 @@ export default function About() {
                   <strong>
                     Third International Conference on Smart Medical, IoT & Artificial Intelligence (ICSMAI&apos;27)
                   </strong>{" "}
-                  is organized by a collaboration of prestigious institutions, in partnership with LSI Laboratory and the IA2D Association.
+                  is organized by a collaboration of prestigious institutions, in partnership with LSISI Laboratory and the IA2D Association.
                 </p>
 
                 <p>
@@ -146,7 +146,7 @@ export default function About() {
                     </Badge>
                   ))}
                 </div>
-                <p className="text-sm text-muted-foreground mt-2">In collaboration with LSI Laboratory and IA2D Association</p>
+                <p className="text-sm text-muted-foreground mt-2">In collaboration with LSISI Laboratory and IA2D Association</p>
               </div>
             </motion.div>
 
