@@ -12,7 +12,7 @@ export default function Keynotes() {
   const speakers = [
     
     {
-      name: "Pr. Omar ELMAZRIA", Pr. Omar ELMAZRIA, Université de lorraine , Nancy, France
+      name: "Pr. Omar ELMAZRIA", 
       organization: "Université de lorraine ",
       location: "Nancy, France.",
       image: "/images/keynotes/speaker_19.jpg?height=400&width=400",
