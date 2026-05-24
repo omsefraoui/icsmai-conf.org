@@ -115,9 +115,10 @@ export default function About() {
                 </p>
 
                 <p>
-                  This inaugural edition aims to bring together students, researchers, and experts in the fields of
-                  Medical Technology, IoT, and Artificial Intelligence to share their latest research findings, exchange
-                  ideas, and discuss challenges and opportunities in these rapidly evolving domains.
+                   This third edition aims to bring together students, researchers, and experts in the fields of
+                   Medical Technology, IoT, IoMT, and Artificial Intelligence to share their latest research findings,
+                    exchange innovative ideas, and discuss key challenges and opportunities in these rapidly evolving
+                     domains.
                 </p>
 
                 <h3 className="text-xl font-semibold mt-6">Call for Papers</h3>
