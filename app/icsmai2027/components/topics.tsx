@@ -47,10 +47,10 @@ export default function Topics() {
       ],
     },
     {
-      title: "Smart Systems & IoT",
+      title: "Smart Systems & IoMT",
       icon: <Network className="h-6 w-6" />,
       topics: [
-        "Internet of Things",
+        "Internet of Medical Things",
         "Edge Computing",
         "Cyber-Physical Systems",
         "Smart Cities",
