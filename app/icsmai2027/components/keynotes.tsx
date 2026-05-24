@@ -16,7 +16,7 @@ export default function Keynotes() {
       organization: "Université de lorraine ",
       location: "Nancy, France",
       image: "/images/keynotes/speaker_19.jpg?height=400&width=400",
-      bio: "  ... ", 
+      bio: "  Omar Elmazria is a Distinguished Professor at the University of Lorraine, conducting his research at the Jean Lamour Institute (IJL) and teaching at Polytech Nancy. An Emeritus Member of the Institut Universitaire de France (IUF), he has built a rich international career as a visiting professor in Canada, China, and the United States. A renowned specialist in Surface Acoustic Wave (SAW) devices, his current research focuses on developing wireless sensor technologies for industrial and biomedical applications, leading several major funded projects (ANR, DGA, SATT Sayens). His scientific excellence is reflected in more than 160 international peer-reviewed papers, 4 patents, and over 120 conference communications, a career honored by prestigious accolades including the URSI 2017 and Lorraine Region 2018 awards.", 
       topic: ".........",
     },
     {
