@@ -120,7 +120,7 @@ export default function Publications() {
                     >
                       <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
                         <Image
-                          src="/images/icsmai25_springer.png"
+                          src="/images/icsmai25_springer_V1.png"
                           alt="ICSMAI 2025 Conference Proceedings Volume 1"
                           fill
                           className="object-cover"
