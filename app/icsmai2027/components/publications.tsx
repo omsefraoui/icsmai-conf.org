@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, easeOut } from "motion/react"   // 👈 ajout de easeOut
+import { motion, easeOut } from "motion/react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, FileText } from "lucide-react"
@@ -16,7 +16,7 @@ export default function Publications() {
       transition: {
         delay: 0.1 * i,
         duration: 0.5,
-        ease: easeOut,   // 👈 corrigé
+        ease: easeOut,
       },
     }),
   }
@@ -93,22 +93,70 @@ export default function Publications() {
                     </p>
                   </div>
 
-                  {/* Proceedings Book */}
-                  <div className="flex justify-center">
+                  {/* Proceedings Books - 3 côte à côte */}
+                  <div className="flex flex-wrap justify-center gap-5">
+                    {/* Book 1 - ICSMAI 2024 */}
                     <motion.div
                       whileHover={{ scale: 1.05, rotateY: 2 }}
                       transition={{ duration: 0.3 }}
                       className="relative"
                     >
-                      <div className="relative w-64 h-96 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
+                      <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
                         <Image
                           src="/images/icsmai24_springer.png"
-                          alt="ICSMAI Conference Proceedings"
+                          alt="ICSMAI 2024 Conference Proceedings"
                           fill
                           className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                       </div>
+                    </motion.div>
+
+                    {/* Book 2 - ICSMAI 2025 Vol.1 */}
+                    <motion.div
+                      whileHover={{ scale: 1.05, rotateY: -2 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative"
+                    >
+                      <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
+                        <Image
+                          src="/images/icsmai25_springer.png"
+                          alt="ICSMAI 2025 Conference Proceedings Volume 1"
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                      </div>
+                    </motion.div>
+
+                    {/* Book 3 - ICSMAI 2025 Vol.2 - avec lien */}
+                    <motion.div
+                      whileHover={{ scale: 1.05, rotateY: 2 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative"
+                    >
+                      <Link
+                        href="https://link.springer.com/book/10.1007/978-3-032-18894-6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block group"
+                      >
+                        <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20 group-hover:border-primary/60 transition-colors">
+                          <Image
+                            src="/images/icsmai25_springer_V2.png"
+                            alt="ICSMAI 2025 Conference Proceedings Volume 2"
+                            fill
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent group-hover:from-black/30 transition-all" />
+                          {/* Overlay "View on Springer" */}
+                          <div className="absolute inset-0 flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span className="text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded-full backdrop-blur-sm">
+                              View on Springer ↗
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
                     </motion.div>
                   </div>
 
