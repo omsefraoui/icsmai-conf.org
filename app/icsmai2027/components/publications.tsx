@@ -123,7 +123,7 @@ export default function Publications() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block group"
-                      ></Link>
+                      >
                       <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
                         <Image
                           src="/images/icsmai25_springer_V1.png"
@@ -133,6 +133,7 @@ export default function Publications() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                       </div>
+                      </Link>
                     </motion.div>
 
                     {/* Book 3 - ICSMAI 2025 Vol.2 - avec lien */}
