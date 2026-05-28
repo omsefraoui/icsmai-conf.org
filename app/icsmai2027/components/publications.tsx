@@ -118,6 +118,12 @@ export default function Publications() {
                       transition={{ duration: 0.3 }}
                       className="relative"
                     >
+                       <Link
+                        href="https://link.springer.com/book/10.1007/978-3-032-18894-6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block group"
+                      ></Link>
                       <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
                         <Image
                           src="/images/icsmai25_springer_V1.png"
@@ -136,7 +142,7 @@ export default function Publications() {
                       className="relative"
                     >
                       <Link
-                        href="https://link.springer.com/book/10.1007/978-3-032-18894-6"
+                        href="https://link.springer.com/book/9783032188960"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block group"
