@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { X, ChevronLeft, ChevronRight, Images } from "lucide-react"
+import { X, ChevronLeft, ChevronRight, Images, Play } from "lucide-react"
 import Image from "next/image"
 
 const editions = [
@@ -10,24 +10,31 @@ const editions = [
   { year: "ICSMAI 2025", slug: "2025" },
 ]
 
-// Replace src values with your actual image paths under /public/images/gallery/
-const photos: Record<string, { src: string; alt: string }[]> = {
+type MediaItem =
+  | { type: "photo"; src: string; alt: string }
+  | { type: "video"; src: string; poster: string; alt: string }
+
+// For YouTube/Vimeo, use an embed URL as src:
+//   YouTube: "https://www.youtube.com/embed/VIDEO_ID"
+//   Vimeo:   "https://player.vimeo.com/video/VIDEO_ID"
+// For local video files, use: "/videos/gallery/2025/highlight.mp4"
+const media: Record<string, MediaItem[]> = {
   "2024": [
-    { src: "/images/gallery/2024/01.jpg", alt: "Opening ceremony 2024" }
-    
-  ],
+    { type: "photo",  src: "/images/gallery/2024/01.jpg", alt: "Opening ceremony 2024" },
+      ],
   "2025": [
-    { src: "/images/gallery/image1.jpg", alt: "Opening ceremony 2025" },
-    { src: "/images/gallery/image2.jpg", alt: "Keynote session 2025" },
-    { src: "/images/gallery/image3.jpg", alt: "Panel discussion 2025" },
-    { src: "/images/gallery/image4.jpg", alt: "Poster session 2025" },
-    { src: "/images/gallery/image5.jpg", alt: "Networking lunch 2025" },
-    { src: "/images/gallery/image6.jpg", alt: "Award ceremony 2025" },
-    { src: "/images/gallery/image7.jpg", alt: "Workshop session 2025" },
-    { src: "/images/gallery/image8.jpg", alt: "Gala dinner 2025" },
-    { src: "/images/gallery/image9.jpg", alt: "Saidia venue 2025" },
-    { src: "/images/gallery/image10.jpg", alt: "Saidia venue 2025" },
-    { src: "/images/gallery/image11.jpg", alt: "Saidia venue 2025" },
+    { type: "photo",  src: "/images/gallery/image1.jpg", alt: "Opening ceremony 2025" },
+    { type: "photo",  src: "/images/gallery/image2.jpg", alt: "Keynote session 2025" },
+    { type: "video",  src: "/images/gallery/Highlight2.mp4", poster: "/images/gallery/video-poster1.jpg", alt: "Conference highlights 2025" },
+    { type: "photo",  src: "/images/gallery/image3.jpg", alt: "Panel discussion 2025" },
+    { type: "photo",  src: "/images/gallery/image4.jpg", alt: "Poster session 2025" },
+    { type: "photo",  src: "/images/gallery/image5.jpg", alt: "Networking lunch 2025" },
+    { type: "photo",  src: "/images/gallery/image6.jpg", alt: "Award ceremony 2025" },
+    { type: "photo",  src: "/images/gallery/image7.jpg", alt: "Workshop session 2025" },
+    { type: "photo",  src: "/images/gallery/2image8.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/2image9.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/2image10.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/2image11.jpg", alt: "Gala dinner 2025" },
   ],
 }
 
@@ -35,19 +42,19 @@ export default function Gallery() {
   const [activeEdition, setActiveEdition] = useState("2025")
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
-  const currentPhotos = photos[activeEdition] ?? []
+  const currentMedia = media[activeEdition] ?? []
 
   const openLightbox = (index: number) => setLightboxIndex(index)
   const closeLightbox = () => setLightboxIndex(null)
 
   const goPrev = () => {
     if (lightboxIndex === null) return
-    setLightboxIndex((lightboxIndex - 1 + currentPhotos.length) % currentPhotos.length)
+    setLightboxIndex((lightboxIndex - 1 + currentMedia.length) % currentMedia.length)
   }
 
   const goNext = () => {
     if (lightboxIndex === null) return
-    setLightboxIndex((lightboxIndex + 1) % currentPhotos.length)
+    setLightboxIndex((lightboxIndex + 1) % currentMedia.length)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -55,6 +62,8 @@ export default function Gallery() {
     if (e.key === "ArrowRight") goNext()
     if (e.key === "Escape") closeLightbox()
   }
+
+  const activeItem = lightboxIndex !== null ? currentMedia[lightboxIndex] : null
 
   return (
     <section id="gallery" className="w-full py-12 md:py-24 lg:py-32">
@@ -69,7 +78,7 @@ export default function Gallery() {
           className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
         >
           <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
-            Photo Gallery
+            Gallery
           </div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
             Conference Highlights
@@ -102,43 +111,60 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 max-h-[400px] overflow-hidden"
+          className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4"
         >
-          {currentPhotos.map((photo, index) => (
+          {currentMedia.map((item, index) => (
             <motion.div
-              key={photo.src}
+              key={index}
               initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.04 }}
               className={`relative overflow-hidden rounded-xl cursor-pointer group ${
-                index === 0 ? "col-span-2 row-span-2 aspect-[16/9]" : "aspect-square"
+                index === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"
               }`}
               onClick={() => openLightbox(index)}
             >
+              {/* Thumbnail */}
               <Image
-                src={photo.src}
-                alt={photo.alt}
+                src={item.type === "video" ? item.poster : item.src}
+                alt={item.alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                <Images className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-all duration-300 flex items-center justify-center">
+                {item.type === "video" ? (
+                  /* Video: play button always visible, brighter on hover */
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/40 group-hover:bg-white/30 transition-all duration-300">
+                    <Play className="h-5 w-5 text-white fill-white ml-0.5" />
+                  </div>
+                ) : (
+                  <Images className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                )}
               </div>
+
+              {/* Video badge */}
+              {item.type === "video" && (
+                <span className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded-full backdrop-blur-sm">
+                  Video
+                </span>
+              )}
             </motion.div>
           ))}
         </motion.div>
 
         {/* Lightbox */}
         <AnimatePresence>
-          {lightboxIndex !== null && (
+          {lightboxIndex !== null && activeItem && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+              className="fixed inset-0 z-50 bg-black/92 flex items-center justify-center p-4"
               onClick={closeLightbox}
               onKeyDown={handleKeyDown}
               tabIndex={0}
@@ -147,7 +173,7 @@ export default function Gallery() {
               <button
                 onClick={closeLightbox}
                 className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-10"
-                aria-label="Close lightbox"
+                aria-label="Close"
               >
                 <X className="h-7 w-7" />
               </button>
@@ -156,43 +182,71 @@ export default function Gallery() {
               <button
                 onClick={(e) => { e.stopPropagation(); goPrev() }}
                 className="absolute left-4 text-white/70 hover:text-white transition-colors z-10"
-                aria-label="Previous photo"
+                aria-label="Previous"
               >
                 <ChevronLeft className="h-9 w-9" />
               </button>
 
-              {/* Image */}
+              {/* Content */}
               <motion.div
                 key={lightboxIndex}
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.2 }}
-                className="relative w-full max-w-4xl aspect-[4/3]"
+                className="relative w-full max-w-4xl"
                 onClick={(e) => e.stopPropagation()}
               >
-                <Image
-                  src={currentPhotos[lightboxIndex].src}
-                  alt={currentPhotos[lightboxIndex].alt}
-                  fill
-                  className="object-contain rounded-lg"
-                  sizes="100vw"
-                  priority
-                />
+                {activeItem.type === "video" ? (
+                  // Video — YouTube/Vimeo embed iframe, or native <video> for local files
+                  activeItem.src.includes("youtube.com") || activeItem.src.includes("vimeo.com") ? (
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                      <iframe
+                        src={`${activeItem.src}?autoplay=1`}
+                        title={activeItem.alt}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full"
+                      />
+                    </div>
+                  ) : (
+                    <video
+                      src={activeItem.src}
+                      poster={activeItem.poster}
+                      controls
+                      autoPlay
+                      className="w-full rounded-lg max-h-[80vh]"
+                    />
+                  )
+                ) : (
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image
+                      src={activeItem.src}
+                      alt={activeItem.alt}
+                      fill
+                      className="object-contain rounded-lg"
+                      sizes="100vw"
+                      priority
+                    />
+                  </div>
+                )}
+
+                {/* Caption */}
+                <p className="text-center text-white/60 text-sm mt-3">{activeItem.alt}</p>
               </motion.div>
 
               {/* Next */}
               <button
                 onClick={(e) => { e.stopPropagation(); goNext() }}
                 className="absolute right-4 text-white/70 hover:text-white transition-colors z-10"
-                aria-label="Next photo"
+                aria-label="Next"
               >
                 <ChevronRight className="h-9 w-9" />
               </button>
 
               {/* Counter */}
-              <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
-                {lightboxIndex + 1} / {currentPhotos.length}
+              <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-sm">
+                {lightboxIndex + 1} / {currentMedia.length}
               </p>
             </motion.div>
           )}
