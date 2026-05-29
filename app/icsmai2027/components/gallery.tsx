@@ -31,10 +31,10 @@ const media: Record<string, MediaItem[]> = {
     { type: "photo",  src: "/images/gallery/image5.jpg", alt: "Networking lunch 2025" },
     { type: "photo",  src: "/images/gallery/image6.jpg", alt: "Award ceremony 2025" },
     { type: "photo",  src: "/images/gallery/image7.jpg", alt: "Workshop session 2025" },
-    { type: "photo",  src: "/images/gallery/2image8.jpg", alt: "Gala dinner 2025" },
-    { type: "photo",  src: "/images/gallery/2image9.jpg", alt: "Gala dinner 2025" },
-    { type: "photo",  src: "/images/gallery/2image10.jpg", alt: "Gala dinner 2025" },
-    { type: "photo",  src: "/images/gallery/2image11.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/image8.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/image9.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/image10.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/image11.jpg", alt: "Gala dinner 2025" },
   ],
 }
 
