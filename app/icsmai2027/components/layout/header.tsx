@@ -25,6 +25,7 @@ export default function Header() {
       { name: "Registration", href: "#registration" },
       { name: "Program", href: "#program" },
       { name: "Sponsors", href: "#sponsors" },
+      { name: "Gallery", href: "#gallery" },
       { name: "Contact", href: "#contact" },
     ],
     [],

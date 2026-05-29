@@ -9,12 +9,8 @@ import Dates from "../components/dates"
 import Registration from "../components/registration"
 //import Program from "../components/program"
 import Sponsors from "../components/sponsors"
+import Gallery from "@/components/gallery"
 import Contact from "../components/contact"
-
-
-
-
-
 
 
 export default function Home() {
@@ -32,6 +28,7 @@ export default function Home() {
       <Registration />
      {/* <Program /> */}
       <Sponsors />
+      <Gallery />
       <Contact />
     </main>
   )
