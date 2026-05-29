@@ -120,9 +120,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.04 }}
-              className={`relative overflow-hidden rounded-xl cursor-pointer group ${
-                index === 0 ? "col-span-2 aspect-[3/2]" : "aspect-square"
-              }`}
+              className="relative overflow-hidden rounded-lg cursor-pointer group w-[400px] h-[200px] flex-shrink-0"
               onClick={() => openLightbox(index)}
             >
               {/* Thumbnail */}
