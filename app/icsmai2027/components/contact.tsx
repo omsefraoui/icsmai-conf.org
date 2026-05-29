@@ -153,7 +153,7 @@ export default function Contact() {
                       The conference will be held in Hotel 5 star (All Inclusive) in Saïdia, Morocco
                     </p>
                     <Link
-                      href=""
+                      href="https://www.radissonhotels.com/fr-fr/hotels/radisson-blu-resort-saidia-beach?facilitatorId=RHGSEM&cid=a%3Aps+b%3Aggl+c%3Aemea+i%3Abrand+e%3Ardb+d%3Amea+r%3Abrt+f%3Afr-FR+g%3Aho+h%3AMAOUDRST+v%3Acf&gclsrc=aw.ds&gad_source=1&gad_campaignid=21268767749&gbraid=0AAAAADtKuEWEf2k34hsLdMfZIRZb8CEQB&gclid=CjwKCAjw8uTQBhAdEiwAVvtJyhbUdiF1t8rCbTAvLVn5eHaucmlMrhMHXu8UWfgnSQikKwUd30gzaxoC5IMQAvD_BwE"
                       className="text-muted-foreground hover:text-primary transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"

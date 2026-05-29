@@ -111,7 +111,7 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 max-h-[180px] overflow-hidden"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-0.5 md:gap-0.5 max-h-[180px] overflow-hidden"
         >
           {currentMedia.map((item, index) => (
             <motion.div
@@ -120,7 +120,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.04 }}
-              className="relative overflow-hidden rounded-lg cursor-pointer group w-[400px] h-[200px] flex-shrink-0"
+              className="relative overflow-hidden rounded-lg cursor-pointer group w-[350px] h-[200px] flex-shrink-0"
               onClick={() => openLightbox(index)}
             >
               {/* Thumbnail */}
