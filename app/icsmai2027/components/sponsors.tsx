@@ -44,13 +44,13 @@ export default function Sponsors() {
                         }}
                         className="flex items-center justify-center h-full"
                       >
-                        <Image
-                          src={`/images/sponsors/${sponsor}.png`}
-                          alt={`Sponsor ${sponsor}`}
-                          width={200}
-                          height={100}
-                          className="h-[100px] w-auto mx-6 mt-8 "
-                        />
+                      <Image
+  src={`/images/sponsors/${sponsor}.png`}
+  alt={`Sponsor ${sponsor}`}
+  width={200}
+  height={100}
+  className={`w-auto mx-6 mt-8 ${sponsor === 17 ? "h-[160px]" : "h-[100px]"}`}
+/>
                       </motion.div>
                 </motion.div>
               ))}
