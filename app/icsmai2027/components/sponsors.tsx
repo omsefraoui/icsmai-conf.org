@@ -24,7 +24,7 @@ export default function Sponsors() {
             
             <div className="mt-8 max-w-[1200px]">
             <InfiniteSlider gap={24} reverse>
-              {[1, 2, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14].map((sponsor, index) => (
+              {[1, 2, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14, 16, 17].map((sponsor, index) => (
                   <motion.div
                   key={sponsor}
                   initial={{ opacity: 0, y: 20 }}
