@@ -20,21 +20,21 @@ type MediaItem =
 // For local video files, use: "/videos/gallery/2025/highlight.mp4"
 const media: Record<string, MediaItem[]> = {
   "2024": [
-    { type: "photo",  src: "/images/gallery/iamge9.jpg", alt: "Opening ceremony 2024" },
+    { type: "photo",  src: "/images/gallery/image9.jpg", alt: "Opening ceremony 2024" },
       ],
   "2025": [
     { type: "photo",  src: "/images/gallery/image1.jpg", alt: "Saidia Plage" },
     { type: "photo",  src: "/images/gallery/image2.jpg", alt: "Marina Saidia" },
     { type: "video",  src: "/images/gallery/Highlight2.mp4", poster: "/images/gallery/video-poster1.jpg", alt: "Conference highlights 2025" },
-    { type: "photo",  src: "/images/gallery/image3.jpg", alt: "Panel discussion 2025" },
-    { type: "photo",  src: "/images/gallery/image4.jpg", alt: "Poster session 2025" },
-    { type: "photo",  src: "/images/gallery/image5.jpg", alt: "Networking lunch 2025" },
-    { type: "photo",  src: "/images/gallery/image6.jpg", alt: "Award ceremony 2025" },
-    { type: "photo",  src: "/images/gallery/image7.jpg", alt: "Workshop session 2025" },
-    { type: "photo",  src: "/images/gallery/image8.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/image3.jpg", alt: "Gala dinner 2025" },
+    { type: "photo",  src: "/images/gallery/image4.jpg", alt: "Saidia " },
+    { type: "photo",  src: "/images/gallery/image5.jpg", alt: "Radisson Saidia" },
+    { type: "photo",  src: "/images/gallery/image6.jpg", alt: "Golf Saidia" },
+    { type: "photo",  src: "/images/gallery/image7.jpg", alt: "Plage Saidia" },
+    { type: "photo",  src: "/images/gallery/image8.jpg", alt: "Saidia" },
     { type: "photo",  src: "/images/gallery/image9.jpg", alt: "Gala dinner 2025" },
     { type: "photo",  src: "/images/gallery/image10.jpg", alt: "Gala dinner 2025" },
-    { type: "photo",  src: "/images/gallery/image11.jpg", alt: "Opening ceremony 2025" },
+    { type: "photo",  src: "/images/gallery/image11.jpg", alt: "Gala dinner 2025" },
   ],
 }
 
@@ -121,7 +121,7 @@ export default function Gallery() {
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.04 }}
               className={`relative overflow-hidden rounded-xl cursor-pointer group ${
-                index === 0 ? "col-span-2 aspect-[4/3]" : "aspect-square"
+                index === 0 ? "col-span-2 aspect-[3/2]" : "aspect-square"
               }`}
               onClick={() => openLightbox(index)}
             >
