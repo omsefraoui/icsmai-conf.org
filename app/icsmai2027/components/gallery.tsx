@@ -13,26 +13,21 @@ const editions = [
 // Replace src values with your actual image paths under /public/images/gallery/
 const photos: Record<string, { src: string; alt: string }[]> = {
   "2024": [
-    { src: "/images/gallery/2024/01.jpg", alt: "Opening ceremony 2024" },
-    { src: "/images/gallery/2024/02.jpg", alt: "Keynote session 2024" },
-    { src: "/images/gallery/2024/03.jpg", alt: "Panel discussion 2024" },
-    { src: "/images/gallery/2024/04.jpg", alt: "Poster session 2024" },
-    { src: "/images/gallery/2024/05.jpg", alt: "Networking lunch 2024" },
-    { src: "/images/gallery/2024/06.jpg", alt: "Award ceremony 2024" },
-    { src: "/images/gallery/2024/07.jpg", alt: "Workshop session 2024" },
-    { src: "/images/gallery/2024/08.jpg", alt: "Gala dinner 2024" },
-    { src: "/images/gallery/2024/09.jpg", alt: "Saidia venue 2024" },
+    { src: "/images/gallery/2024/01.jpg", alt: "Opening ceremony 2024" }
+    
   ],
   "2025": [
-    { src: "/images/gallery/2025/01.jpg", alt: "Opening ceremony 2025" },
-    { src: "/images/gallery/2025/02.jpg", alt: "Keynote session 2025" },
-    { src: "/images/gallery/2025/03.jpg", alt: "Panel discussion 2025" },
-    { src: "/images/gallery/2025/04.jpg", alt: "Poster session 2025" },
-    { src: "/images/gallery/2025/05.jpg", alt: "Networking lunch 2025" },
-    { src: "/images/gallery/2025/06.jpg", alt: "Award ceremony 2025" },
-    { src: "/images/gallery/2025/07.jpg", alt: "Workshop session 2025" },
-    { src: "/images/gallery/2025/08.jpg", alt: "Gala dinner 2025" },
-    { src: "/images/gallery/2025/09.jpg", alt: "Saidia venue 2025" },
+    { src: "/images/gallery/image1.jpg", alt: "Opening ceremony 2025" },
+    { src: "/images/gallery/image2.jpg", alt: "Keynote session 2025" },
+    { src: "/images/gallery/image3.jpg", alt: "Panel discussion 2025" },
+    { src: "/images/gallery/image4.jpg", alt: "Poster session 2025" },
+    { src: "/images/gallery/image5.jpg", alt: "Networking lunch 2025" },
+    { src: "/images/gallery/image6.jpg", alt: "Award ceremony 2025" },
+    { src: "/images/gallery/image7.jpg", alt: "Workshop session 2025" },
+    { src: "/images/gallery/image8.jpg", alt: "Gala dinner 2025" },
+    { src: "/images/gallery/image9.jpg", alt: "Saidia venue 2025" },
+    { src: "/images/gallery/image10.jpg", alt: "Saidia venue 2025" },
+    { src: "/images/gallery/image11.jpg", alt: "Saidia venue 2025" },
   ],
 }
 
@@ -107,7 +102,7 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 max-h-[400px] overflow-hidden"
         >
           {currentPhotos.map((photo, index) => (
             <motion.div
@@ -117,7 +112,7 @@ export default function Gallery() {
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.04 }}
               className={`relative overflow-hidden rounded-xl cursor-pointer group ${
-                index === 0 ? "col-span-2 row-span-2 aspect-[4/3]" : "aspect-square"
+                index === 0 ? "col-span-2 row-span-2 aspect-[16/9]" : "aspect-square"
               }`}
               onClick={() => openLightbox(index)}
             >
