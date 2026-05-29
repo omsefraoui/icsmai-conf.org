@@ -49,7 +49,7 @@ export default function Sponsors() {
   alt={`Sponsor ${sponsor}`}
   width={200}
   height={100}
-  className={`w-auto mx-6 mt-8 ${sponsor === 17 || sponsor === 5 ? "h-[160px]" : "h-[100px]"}`}
+  className={`w-auto mx-6 mt-8 ${sponsor === 17 || sponsor === 8 ? "h-[160px]" : "h-[100px]"}`}
 />
                       </motion.div>
                 </motion.div>
