@@ -20,7 +20,7 @@ export default function Registration() {
       description: "For full-time students:  Registration + 1 night all inclusive",
       buttonText: "Register as Student",
     },*/
-    {
+    /*{
       name: "Academia",
       price: { morocco: "3000 dhs", foreign: "350 euros" },
       description: "For academic researchers:  Registration + 1 night all inclusive",
@@ -32,7 +32,7 @@ export default function Registration() {
       price: { morocco: "3500 dhs", foreign: "400 euros" },
       description: "For industry professionals:  Registration + 1 night all inclusive",
       buttonText: "Register as Professional",
-    },
+    },*/
     {
       name: "Online",
       price: { morocco: "1500 dhs", foreign: "200 euros" },
@@ -53,7 +53,7 @@ export default function Registration() {
       price: { morocco: "2800 dhs", foreign: "350 euros" },
       description: "For full-time students:  Registration + 1 night all inclusive",
     },*/
-    {
+    /*{
       name: "Academia",
       price: { morocco: "3500 dhs", foreign: "400 euros" },
       description: "For academic researchers:  Registration + 1 night all inclusive",
@@ -62,7 +62,7 @@ export default function Registration() {
       name: "Industry",
       price: { morocco: "4000 dhs", foreign: "450 euros" },
       description: "For industry professionals:  Registration + 1 night all inclusive",
-    },
+    },*/
     {
       name: "Online",
       price: { morocco: "2000 dhs", foreign: "250 euros" },
@@ -74,7 +74,8 @@ export default function Registration() {
     "Certificate of Presentation and Participation",
     "Conference Package (Programme, Electronic Conference Proceedings, Bloc note...)",
     "Access to all Sessions",
-    "Coffee breaks (all days of the conference) : All inclusive",
+    "Coffee breaks",
+    //"Coffee breaks (all days of the conference) : All inclusive",
     //"++Lunches (All days of the conference) : All inclusive",
     //"++One Night in Hotel Saidia all inclusive (5***** Hotel) for students, double room",
     "For individual bookings, kindly consult the accommodation information available",
