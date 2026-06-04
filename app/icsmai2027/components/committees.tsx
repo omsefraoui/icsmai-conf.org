@@ -131,6 +131,8 @@ export default function Committees() {
       "S. YEVSEIEV, Kharkiv Polytechnic Institute, Ukraine",
       "L. BEKIROVA, ASOIU Baku, Azebaidjan",
       "A. G. Armada, Universidad Carlos III de Madrid, Spain",
+      "Praveen Kumar Myakala  VP JPMorgan Chase & Co. Melissa, Texas, USA",
+      "Gandhi Namani, Synaptics Inc. Irvine, Californie, USA",
       "G. VARSHNEY, JSS Academy of Technical Education Noida, UP, India",
       "A. KHARe, Sharda University, Greater Noida, India",
       "S. VARSHNEY, Sharda University, Greater Noida, India",
