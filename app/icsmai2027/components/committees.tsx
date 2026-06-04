@@ -133,7 +133,7 @@ export default function Committees() {
       "A. G. Armada, Universidad Carlos III de Madrid, Spain",
       "Praveen Kumar Myakala  VP JPMorgan Chase & Co. Melissa, Texas, USA",
       "Gandhi Namani, Synaptics Inc. Irvine, Californie, USA",
-      "G. VARSHNEY, JSS Academy of Technical Education Noida, UP, India",
+      "G. VARSHNEY, JSS Academy of Technical Education Noida, India",
       "A. KHARe, Sharda University, Greater Noida, India",
       "S. VARSHNEY, Sharda University, Greater Noida, India",
       "P. K. RAJPUT, UPES, Dehradun, India",
