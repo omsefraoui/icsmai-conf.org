@@ -12,12 +12,12 @@ export default function Dates() {
       description: "Start submitting your research papers.",
     },
     {
-      date: "November 30, 2027",
+      date: "November 30, 2026",
       title: "Paper Submission Deadline",
       description: "Last day to submit your papers for review.",
     },
     {
-      date: "November 30, 2027",
+      date: "November 30, 2026",
       title: "Poster Submission Deadline",
       description: "Last day to submit posters.",
     },
