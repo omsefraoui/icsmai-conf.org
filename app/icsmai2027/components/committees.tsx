@@ -197,7 +197,7 @@ export default function Committees() {
       //"H. BOUALI, ESTO, UMP, Oujda, Morocco",
       //"R. BENKADDOUR, ESTO, UMP, Oujda, Morocco",
       "M. JEYAR, ESTO, UMP, Oujda, Morocco",
-      "N. Davanam, Texas, AMD, USA",
+      "N. Davanam, Texas, AMD technology, USA",
       //"M. ABBOUD-ABID ENP, Oran, Algérie",
       //"I. KISSAMI, Mohamed VI Polytechnic University, Morocco",
       "M. FAYAD, Marie and louis Pasteur University, France",
