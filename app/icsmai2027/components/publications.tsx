@@ -92,8 +92,7 @@ export default function Publications() {
                       </span>
                     </p>
                   </div>
-
-                  {/* Proceedings Books - 3 côte à côte */}
+  {/* Proceedings Books - Volume 1 côte à côte */}
                   <div className="flex flex-wrap justify-center gap-5">
                     {/* Book 1 - ICSMAI 2024 */}
                     <motion.div
@@ -101,6 +100,38 @@ export default function Publications() {
                       transition={{ duration: 0.3 }}
                       className="relative"
                     >
+                      <Link
+                        href="https://link.springer.com/book/10.1007/978-3-031-66850-0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block group"
+                      >
+                      <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
+                        <Image
+                          src="/images/icsmai24_springer_V1.png"
+                          alt="ICSMAI 2024 Conference Proceedings"
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                      </div>
+                      </Link>
+                    </motion.div>
+
+                  {/* Proceedings Books - Volume 2 côte à côte */}
+                  <div className="flex flex-wrap justify-center gap-5">
+                    {/* Book 2 - ICSMAI 2024 */}
+                    <motion.div
+                      whileHover={{ scale: 1.05, rotateY: 2 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative"
+                    >
+                      <Link
+                        href="https://link.springer.com/book/10.1007/978-3-031-66854-8"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block group"
+                      >
                       <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
                         <Image
                           src="/images/icsmai24_springer.png"
@@ -110,6 +141,7 @@ export default function Publications() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                       </div>
+                      </Link>
                     </motion.div>
 
                     {/* Book 2 - ICSMAI 2025 Vol.1 */}
