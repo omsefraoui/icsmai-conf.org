@@ -21,6 +21,34 @@ export default function Publications() {
     }),
   }
 
+  const books = [
+    {
+      href: "https://link.springer.com/book/10.1007/978-3-031-66850-0",
+      src: "/images/icsmai24_springer_V1.png",
+      alt: "ICSMAI 2024 Conference Proceedings Volume 1",
+      rotateY: 2,
+    },
+    {
+      href: "https://link.springer.com/book/10.1007/978-3-031-66854-8",
+      src: "/images/icsmai24_springer.png",
+      alt: "ICSMAI 2024 Conference Proceedings Volume 2",
+      rotateY: -2,
+    },
+    {
+      href: "https://link.springer.com/book/10.1007/978-3-032-18894-6",
+      src: "/images/icsmai25_springer_V1.png",
+      alt: "ICSMAI 2025 Conference Proceedings Volume 1",
+      rotateY: 2,
+    },
+    {
+      href: "https://link.springer.com/book/9783032188960",
+      src: "/images/icsmai25_springer_V2.png",
+      alt: "ICSMAI 2025 Conference Proceedings Volume 2",
+      rotateY: -2,
+      showOverlay: true,
+    },
+  ]
+
   return (
     <section id="publications" className="w-full py-18 md:py-20 md:pb-32">
       <div className="container px-4 md:px-6">
@@ -92,117 +120,47 @@ export default function Publications() {
                       </span>
                     </p>
                   </div>
-  {/* Proceedings Books - Volume 1 côte à côte */}
+
+                  {/* All 4 Proceedings Books in a single flat row */}
                   <div className="flex flex-wrap justify-center gap-5">
-                    {/* Book 1 - ICSMAI 2024 */}
-                    <motion.div
-                      whileHover={{ scale: 1.05, rotateY: 2 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative"
-                    >
-                      <Link
-                        href="https://link.springer.com/book/10.1007/978-3-031-66850-0"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block group"
+                    {books.map((book, index) => (
+                      <motion.div
+                        key={index}
+                        whileHover={{ scale: 1.05, rotateY: book.rotateY }}
+                        transition={{ duration: 0.3 }}
+                        className="relative"
                       >
-                      <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
-                        <Image
-                          src="/images/icsmai24_springer_V1.png"
-                          alt="ICSMAI 2024 Conference Proceedings"
-                          fill
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                      </div>
-                      </Link>
-                    </motion.div>
-
-                  {/* Proceedings Books - Volume 2 côte à côte */}
-                  <div className="flex flex-wrap justify-center gap-5">
-                    {/* Book 2 - ICSMAI 2024 */}
-                    <motion.div
-                      whileHover={{ scale: 1.05, rotateY: 2 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative"
-                    >
-                      <Link
-                        href="https://link.springer.com/book/10.1007/978-3-031-66854-8"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block group"
-                      >
-                      <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
-                        <Image
-                          src="/images/icsmai24_springer.png"
-                          alt="ICSMAI 2024 Conference Proceedings"
-                          fill
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                      </div>
-                      </Link>
-                    </motion.div>
-
-                    {/* Book 2 - ICSMAI 2025 Vol.1 */}
-                    <motion.div
-                      whileHover={{ scale: 1.05, rotateY: -2 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative"
-                    >
-                       <Link
-                        href="https://link.springer.com/book/10.1007/978-3-032-18894-6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block group"
-                      >
-                      <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20">
-                        <Image
-                          src="/images/icsmai25_springer_V1.png"
-                          alt="ICSMAI 2025 Conference Proceedings Volume 1"
-                          fill
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                      </div>
-                      </Link>
-                    </motion.div>
-
-                    {/* Book 3 - ICSMAI 2025 Vol.2 - avec lien */}
-                    <motion.div
-                      whileHover={{ scale: 1.05, rotateY: 2 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative"
-                    >
-                      <Link
-                        href="https://link.springer.com/book/9783032188960"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block group"
-                      >
-                        <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20 group-hover:border-primary/60 transition-colors">
-                          <Image
-                            src="/images/icsmai25_springer_V2.png"
-                            alt="ICSMAI 2025 Conference Proceedings Volume 2"
-                            fill
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent group-hover:from-black/30 transition-all" />
-                          {/* Overlay "View on Springer" */}
-                          <div className="absolute inset-0 flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span className="text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded-full backdrop-blur-sm">
-                              View on Springer ↗
-                            </span>
+                        <Link
+                          href={book.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block group"
+                        >
+                          <div className="relative w-40 h-60 overflow-hidden rounded-xl shadow-lg border-2 border-primary/20 group-hover:border-primary/60 transition-colors">
+                            <Image
+                              src={book.src}
+                              alt={book.alt}
+                              fill
+                              className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent group-hover:from-black/30 transition-all" />
+                            {book.showOverlay && (
+                              <div className="absolute inset-0 flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span className="text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded-full backdrop-blur-sm">
+                                  View on Springer ↗
+                                </span>
+                              </div>
+                            )}
                           </div>
-                        </div>
-                      </Link>
-                    </motion.div>
+                        </Link>
+                      </motion.div>
+                    ))}
                   </div>
 
                   {/* Book Description */}
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-medium">ICSMAI 2027 Proceedings</span> - Your research will be part of this
+                      <span className="font-medium">ICSMAI 2027 Proceedings</span> — Your research will be part of this
                       prestigious international publication
                     </p>
                   </div>
