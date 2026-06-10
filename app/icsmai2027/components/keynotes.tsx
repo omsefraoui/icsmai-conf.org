@@ -43,7 +43,7 @@ export default function Keynotes() {
       image: "/images/keynotes/speaker_11.jpg?height=400&width=400",
       bio: "Intissar HADDIYA, MD, PhD, is a Moroccan nephrologist, and Professor of Nephrology at Mohammed Premier University, Oujda. She graduated from the Faculty of Medicine in Rabat in 2006 and specialized in nephrology, dialysis, and kidney transplantation, with training in France. She holds a PhD in Social Responsibility in Health (2021), a specialization in AI in Healthcare (Stanford University, 2024) and has been President of the Kidney Failure Patients Support Association in Eastern Morocco since 2022. An author and reviewer for several medical journals, she has published over 50 scientific articles and a book on social responsibility in health in Africa (Peter Lang, 2023). She also holds multiple international certifications in nephrology, medical education, and ethics..", 
       topic: "Environmental determinants of hypertension",
-    },
+    },*/
     {
       name: "Pr. Abdelkrim DAOUDI",
       organization: "FMPO, Med 1st University",
@@ -51,7 +51,7 @@ export default function Keynotes() {
       image: "/images/keynotes/speaker_14.jpg?height=400&width=400",
       bio: "Leading researcher in deep learning and computer vision with over 100 publications.",
       topic: "Telemedicine: experience in the Eastern region",
-    }  */
+    }  
     
   ]
 
