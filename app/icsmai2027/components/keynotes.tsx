@@ -49,7 +49,7 @@ export default function Keynotes() {
       organization: "FMPO, Med 1st University",
       location: "Oujda, Morocco.",
       image: "/images/keynotes/speaker_14.jpg?height=400&width=400",
-      bio: "Leading researcher in deep learning and computer vision with over 100 publications.",
+      bio: "Pr. Abdelkrim Daoudi is a leading figure in Moroccan medicine, academic research, and healthcare governance. Appointed by His Majesty King Mohammed VI as the Director General of the Territorial Health Group (GST) for the Fès-Meknès region, he currently spearheads the modernization of the regional public healthcare ecosystem, overseeing 19 hospitals and over 420 primary care centers.A renowned professor and surgeon specializing in Orthopedics and Hand Surgery, he previously served at the Mohammed VI University Hospital of Oujda and is the former President of the Moroccan Society for Surgery of the Hand (SMCM).",
       topic: "Telemedicine: experience in the Eastern region",
     }  
     
