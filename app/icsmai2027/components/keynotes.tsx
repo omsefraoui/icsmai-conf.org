@@ -12,6 +12,15 @@ export default function Keynotes() {
   const speakers = [
     
     {
+      name: "Pr. Mohammad Gouse Galety",
+      organization: "Samarkand International University of Technology",
+      location: "Samarkand, Uzbekistan",
+     // image: "/placeholder.svg?height=400&width=400",
+      image: "/images/keynotes/speaker_32.jpg?height=400&width=400",
+      bio: " Mohammad Gouse Galety is a distinguished academic and seasoned computer science professional, currently serving as Dean and Professor at the School of Computing at Samarkand International University of Technology in Samarkand, Uzbekistan. With a career spanning over two decades, he has established himself as a leading educator and researcher on the international stage. Professor Galety’s research sits at the cutting edge of modern computing, with a primary focus on Web Mining, Computer Vision, the Internet of Things (IoT), Machine Learning, and Artificial Intelligence. His impactful contributions to these fields are reflected in a strong portfolio of scholarly work. He has co-authored numerous journal papers and international conference proceedings published in prestigious venues indexed by Springer, Web of Science, and Scopus. Beyond his papers, his innovative mindset has led to four patents, and he has contributed to the academic community by authoring or editing a dozen books. His profound expertise and service to the profession are recognized globally through his esteemed fellowships with two of the world's leading professional organizations: the Institute of Electrical and Electronics Engineers (IEEE) and the Association for Computing Machinery (ACM). Throughout his extensive career, Professor Galety has held significant academic positions across Asia, the Middle East, and Africa, demonstrating a remarkable adaptability and a global perspective on education. His international teaching journey has included roles at: • India: Sree Vidyanikethan Degree College, Emeralds Degree College (Tirupati), and Brindavan College of Engineering (Bangalore). • Kuwait: Kuwait Educational Center. • Ethiopia: Ambo University (Ambo) and Debre Berhan University (Debre Berhan). • Iraq: Lebanese French University and the Catholic University in Erbil (Erbil). In each role, he has dedicated himself to shaping the next generation of technologists by sharing his knowledge with undergraduate and postgraduate students through a wide range of computer science and information technology courses. As Dean at the Samarkand International University of Technology, he continues to lead and inspire, driving innovation and academic excellence in the heart of Uzbekistan. ",
+      topic: "----------",
+    }, 
+    {
       name: "Pr. Omar ELMAZRIA", 
       organization: "Université de lorraine ",
       location: "Nancy, France",
@@ -19,15 +28,7 @@ export default function Keynotes() {
       bio: "  Omar Elmazria is a Distinguished Professor at the University of Lorraine, conducting his research at the Jean Lamour Institute (IJL) and teaching at Polytech Nancy. An Emeritus Member of the Institut Universitaire de France (IUF), he has built a rich international career as a visiting professor in Canada, China, and the United States. A renowned specialist in Surface Acoustic Wave (SAW) devices, his current research focuses on developing wireless sensor technologies for industrial and biomedical applications, leading several major funded projects (ANR, DGA, SATT Sayens). His scientific excellence is reflected in more than 160 international peer-reviewed papers, 4 patents, and over 120 conference communications, a career honored by prestigious accolades including the URSI 2017 and Lorraine Region 2018 awards.", 
       topic: ".........",
     },
-    {
-      name: "Pr. YASSAMINE BENTATA",
-      organization: "FMPO, Med 1st University",
-      location: "Oujda, Morocco",
-      image: "/images/keynotes/speaker_17.jpg?height=400&width=400",
-      bio: " Professor Yassamine Bentata is a  Professor at the Faculty of Medicine and Pharmacy of Oujda, Mohammed First University. Since 2014, she has headed the Nephrology, Dialysis and Renal Transplantation Department at Mohammed VI University Hospital in Oujda. She holds a PhD in Epidemiology of Medical and Surgical Sciences from Souissi University, Rabat (2016), with research focused on diabetic nephropathy progression. She directs the Laboratory of Epidemiology, Clinical Research, and Public Health. A board member of the Moroccan Society of Nephrology since 2018, she became its Secretary General in 2024. She serves as an expert evaluator for the CNRST and ANEAQ. Former Vice Dean for Academic Affairs (2013–2021), she has supervised numerous doctoral theses and regularly chairs PhD defense juries. Professor Bentata's the corresponding author of many international publications and actively contributes to clinical research and medical education in Morocco. ", 
-      topic: ".........",
-    },
-    {
+     {
       name: "Pr. MOULAY AKHLOUFI",
       organization: "Université de Moncton",
       location: "Moncton, Canada",
@@ -36,6 +37,15 @@ export default function Keynotes() {
       bio: "Professor Moulay Akhloufi holds a Bachelor of Science in Physics from the University Abdelmalek Essaadi (Morocco) and a Bachelor of Engineering from Telecom Saint-Etienne (France). He has a Master's and Ph.D. in Electrical Engineering from Ecole Polytechnique of Montreal and Laval University (Canada), respectively. Additionally, he holds an MBA from Laval University. Currently, Professor Akhloufi is a Computer Science Professor at Université de Moncton. He leads the Perception, Robotics, and Intelligent Machines (PRIME) research lab and serves as the Director of the Center for Artificial Intelligence NB Power. Additionally, he holds the Chair of AI in Healthcare. Before joining Université de Moncton, he acquired significant experience in the industry and technology transfer, particularly in machine vision and robotics. Professor Akhloufi's research expertise spans across the domains of artificial intelligence, computer vision, and intelligent robotic systems, where he has contributed to over two hundred publications. Additionally, he holds the status of a Senior Member of the Institute of Electrical and Electronics Engineers (IEEE). He is also an active member of the Society of Photo-Optical Instrumentation Engineers (SPIE). ",
       topic: "----------",
     }, 
+    {
+      name: "Pr. YASSAMINE BENTATA",
+      organization: "FMPO, Med 1st University",
+      location: "Oujda, Morocco",
+      image: "/images/keynotes/speaker_17.jpg?height=400&width=400",
+      bio: " Professor Yassamine Bentata is a  Professor at the Faculty of Medicine and Pharmacy of Oujda, Mohammed First University. Since 2014, she has headed the Nephrology, Dialysis and Renal Transplantation Department at Mohammed VI University Hospital in Oujda. She holds a PhD in Epidemiology of Medical and Surgical Sciences from Souissi University, Rabat (2016), with research focused on diabetic nephropathy progression. She directs the Laboratory of Epidemiology, Clinical Research, and Public Health. A board member of the Moroccan Society of Nephrology since 2018, she became its Secretary General in 2024. She serves as an expert evaluator for the CNRST and ANEAQ. Former Vice Dean for Academic Affairs (2013–2021), she has supervised numerous doctoral theses and regularly chairs PhD defense juries. Professor Bentata's the corresponding author of many international publications and actively contributes to clinical research and medical education in Morocco. ", 
+      topic: ".........",
+    },
+   
          /* {
       name: "Pr. INTISSAR HADDIYA",
       organization: "FMPO, Med 1st University",
