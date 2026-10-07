@@ -136,7 +136,7 @@ export default function Committees() {
       "Gandhi Namani, Synaptics Inc. Irvine, Californie, USA",
       "G. VARSHNEY, JSS Academy of Technical Education Noida, India",
       "A. KHARe, Sharda University, Greater Noida, India",
-      "M..G Galety, International University of Technology, Samarkand, Uzbekistan",
+      "M. Galety, International University of Technology, Samarkand, Uzbekistan",
       "S. VARSHNEY, Sharda University, Greater Noida, India",
       "P. K. RAJPUT, UPES, Dehradun, India",
        "S. Daoudi, FSO, Oujda, Morocco",
