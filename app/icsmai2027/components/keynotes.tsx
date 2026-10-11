@@ -12,7 +12,7 @@ export default function Keynotes() {
   const speakers = [
     
     {
-      name: "Pr. Mohammad Gouse Galety",
+      name: "Pr. Mohammad Gouse GALETY",
       organization: "Samarkand International University of Technology",
       location: "Samarkand, Uzbekistan",
      // image: "/placeholder.svg?height=400&width=400",
@@ -29,7 +29,7 @@ export default function Keynotes() {
       topic: ".........",
     },
      {
-      name: "Pr. MOULAY AKHLOUFI",
+      name: "Pr. Moulay AKHLOUFI",
       organization: "Université de Moncton",
       location: "Moncton, Canada",
      // image: "/placeholder.svg?height=400&width=400",
@@ -38,7 +38,7 @@ export default function Keynotes() {
       topic: "----------",
     }, 
     {
-      name: "Pr. YASSAMINE BENTATA",
+      name: "Pr. Yassamine BENTATA",
       organization: "FMPO, Med 1st University",
       location: "Oujda, Morocco",
       image: "/images/keynotes/speaker_17.jpg?height=400&width=400",
@@ -47,7 +47,7 @@ export default function Keynotes() {
     },
    
          {
-      name: "Pr. INTISSAR HADDIYA",
+      name: "Pr. Intissar HADDIYA",
       organization: "FMPO, Med 1st University",
       location: "Oujda, Morocco.",
       image: "/images/keynotes/speaker_11.jpg?height=400&width=400",
