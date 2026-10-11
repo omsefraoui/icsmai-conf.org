@@ -46,22 +46,30 @@ export default function Keynotes() {
       topic: ".........",
     },
    
-         /* {
+         {
       name: "Pr. INTISSAR HADDIYA",
       organization: "FMPO, Med 1st University",
       location: "Oujda, Morocco.",
       image: "/images/keynotes/speaker_11.jpg?height=400&width=400",
       bio: "Intissar HADDIYA, MD, PhD, is a Moroccan nephrologist, and Professor of Nephrology at Mohammed Premier University, Oujda. She graduated from the Faculty of Medicine in Rabat in 2006 and specialized in nephrology, dialysis, and kidney transplantation, with training in France. She holds a PhD in Social Responsibility in Health (2021), a specialization in AI in Healthcare (Stanford University, 2024) and has been President of the Kidney Failure Patients Support Association in Eastern Morocco since 2022. An author and reviewer for several medical journals, she has published over 50 scientific articles and a book on social responsibility in health in Africa (Peter Lang, 2023). She also holds multiple international certifications in nephrology, medical education, and ethics..", 
-      topic: "Environmental determinants of hypertension",
-    },*/
+      topic: ".....",
+    },
     {
+      name: "Pr. Mohammed CHOUKRI",
+      organization: "FMPO, Med 1st University",
+      location: "Oujda, Morocco.",
+      image: "/images/keynotes/speaker_33.jpg?height=400&width=400",
+      bio: "..",
+      topic: "",
+    } 
+   /* {
       name: "Pr. Abdelkrim DAOUDI",
       organization: "FMPO, Med 1st University",
       location: "Oujda, Morocco.",
       image: "/images/keynotes/speaker_14.jpg?height=400&width=400",
       bio: "Pr. Abdelkrim Daoudi is a leading figure in Moroccan medicine, academic research, and healthcare governance. Appointed by His Majesty King Mohammed VI as the Director General of the Territorial Health Group (GST) for the Fès-Meknès region, he currently spearheads the modernization of the regional public healthcare ecosystem, overseeing 19 hospitals and over 420 primary care centers.A renowned professor and surgeon specializing in Orthopedics and Hand Surgery, he previously served at the Mohammed VI University Hospital of Oujda and is the former President of the Moroccan Society for Surgery of the Hand (SMCM).",
       topic: "Telemedicine: experience in the Eastern region",
-    }  
+    }  */
     
   ]
 
