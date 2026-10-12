@@ -118,7 +118,7 @@ export default function Committees() {
       "I. LAJOIE, Marie and louis Pasteur University, France",
       "Navom Saxena,  Meta, New York, USA",
       "F. AUBER, Marie and louis Pasteur University, France",
-      "Andrea Pitrone, University of Catania, Italy,",
+      "Andrea Pitrone, Loop Quantum AI Labs, Delaware, United State",
       "Sunil Kumar Gurram,   Californie, USA",
       "Ranadheer Charabuddi  Nutrien, USA",
       "Bhavnish Walia,  Amazon,  New York City  USA",
