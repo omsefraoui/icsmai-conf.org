@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {
+    root: "/workspaces/icsmai-conf.org/app/icsmai2027",
+  },
 };
 
-export default nextConfig;
+export default function nextConfigWrapper() {
+  return nextConfig;
+}
