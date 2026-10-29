@@ -4,11 +4,8 @@ import React, { useState } from "react";
 import { 
   Activity, 
   Brain, 
-  CheckCircle2, 
   ChevronRight, 
   ChevronLeft, 
-  AlertTriangle, 
-  Users, 
   Sliders, 
   HelpCircle,
   FileSpreadsheet
