@@ -1,8 +1,10 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: "/workspaces/icsmai-conf.org/app/icsmai2027",
+    // Chemin relatif au projet : fonctionne dans Codespaces, en local et sur Vercel
+    root: path.join(__dirname),
   },
 };
 
