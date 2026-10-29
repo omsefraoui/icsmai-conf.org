@@ -8,81 +8,102 @@ export default function AtelierPage() {
         {/* En-tête de l'atelier */}
         <div className="border-b border-gray-200 pb-6 mb-8">
           <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide mb-3">
-            ICSMAI 2027 • Événement Spécial
+            ICSMAI 2027 • Ateliers Pratiques
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">
-            Atelier Pratique : Intelligence Artificielle et Systèmes Intelligents en Santé
+            Ateliers Spécialisés : Intelligence Artificielle et Systèmes Intelligents en Santé
           </h1>
-          <p className="text-lg text-gray-600">
-            Animé par <strong className="text-gray-800">Pr. Omar Sefraoui</strong>
-          </p>
           <p className="text-sm text-gray-500 mt-1">
-            📅 Dates : 23 et 24 avril 2027 (Vendredi après-midi, Samedi matin et Samedi après-midi)
+            📅 Dates : 23 et 24 avril 2027 (Saïdia, Maroc)
           </p>
         </div>
 
         {/* Introduction */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">À propos de l'atelier</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Présentation générale</h2>
           <p className="text-gray-700 leading-relaxed">
-            Cet atelier pratique propose une immersion complète dans l'application des modèles d'apprentissage automatique et des architectures avancées pour le traitement des données de santé. Destiné aux chercheurs, doctorants et professionnels, il combinera des fondements théoriques rigoureux et des cas d'usage interactifs.
+            Ces sessions pratiques de la conférence ICSMAI 2027 offrent une immersion approfondie dans le traitement, la modélisation et l'exploitation éthique des données de santé, encadrées par des experts reconnus.
           </p>
         </div>
 
-        {/* Programme Provisoire */}
+        {/* Programme détaillé par session */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Programme Provisoire</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Programme des Sessions</h2>
           
           <div className="space-y-6">
-            {/* Session 1 */}
+            
+            {/* Session Vendredi Après-midi */}
             <div className="bg-gray-50 rounded-xl p-5 border-l-4 border-blue-600 shadow-sm">
-              <span className="text-xs font-bold text-blue-600 uppercase">Session 1</span>
-              <h3 className="text-lg font-semibold text-gray-800 mt-1">Vendredi Après-midi (23 Avril 2027)</h3>
-              <p className="text-sm font-medium text-gray-600 mt-1">Fondements et Prétraitement des Données Médicales</p>
-              <ul className="list-disc list-inside text-sm text-gray-700 mt-2 space-y-1">
-                <li>Introduction aux flux de données de santé et conformité éthique.</li>
-                <li>Nettoyage, gestion des valeurs manquantes et alignement strict des caractéristiques.</li>
-                <li>Mise en place de l'environnement de travail et pipeline de validation croisée.</li>
-              </ul>
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <div>
+                  <span className="text-xs font-bold text-blue-600 uppercase">Session 1</span>
+                  <h3 className="text-lg font-semibold text-gray-800 mt-1">Vendredi 23 Avril 2027 (15h00 - 19h00)</h3>
+                </div>
+                <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded-md border border-blue-200">
+                  Pr. K. Ghoumid
+                </span>
+              </div>
+              <p className="text-sm text-gray-700 mt-3 leading-relaxed">
+                Approches avancées et intégration des flux de données intelligentes pour l'ingénierie biomédicale.
+              </p>
             </div>
 
-            {/* Session 2 */}
-            <div className="bg-gray-50 rounded-xl p-5 border-l-4 border-indigo-600 shadow-sm">
-              <span className="text-xs font-bold text-indigo-600 uppercase">Session 2</span>
-              <h3 className="text-lg font-semibold text-gray-800 mt-1">Samedi Matin (24 Avril 2027)</h3>
-              <p className="text-sm font-medium text-gray-600 mt-1">Modélisation Prédictive et Apprentissage Automatique</p>
-              <ul className="list-disc list-inside text-sm text-gray-700 mt-2 space-y-1">
-                <li>Application des algorithmes de classification au diagnostic (ex. : seuils cliniques, diabète).</li>
-                <li>Optimisation des hyperparamètres et évaluation des performances (Sensibilité, Spécificité, AUC-ROC).</li>
-                <li>Études de cas pratiques sur des datasets réels.</li>
-              </ul>
+            {/* Session Samedi Matin (Votre intervention) */}
+            <div className="bg-blue-50/60 rounded-xl p-5 border-l-4 border-indigo-600 shadow-sm border border-indigo-100">
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <div>
+                  <span className="text-xs font-bold text-indigo-600 uppercase">Session 2 • Atelier Principal</span>
+                  <h3 className="text-lg font-bold text-indigo-950 mt-1">Samedi 24 Avril 2027 (09h00 - 13h00)</h3>
+                </div>
+                <span className="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-md">
+                  Pr. Omar Sefraoui
+                </span>
+              </div>
+              <div className="mt-3">
+                <p className="text-base font-semibold text-indigo-900">
+                  « From Clinical Data to Trustworthy Predictions »
+                </p>
+                <p className="text-sm font-medium text-indigo-800 mt-0.5">
+                  L'IA médicale en pratique : des données cliniques aux prédictions dignes de confiance
+                </p>
+                <ul className="list-disc list-inside text-sm text-gray-700 mt-2 space-y-1">
+                  <li>De la structuration des données cliniques aux seuils de décision validés (OMS/ADA).</li>
+                  <li>Pipelines d'apprentissage automatique et validation rigoureuse sous PyCharm.</li>
+                  <li>Fiabilité, robustesse et explicabilité des modèles prédictifs en milieu médical.</li>
+                </ul>
+              </div>
             </div>
 
-            {/* Session 3 */}
+            {/* Session Samedi Après-midi */}
             <div className="bg-gray-50 rounded-xl p-5 border-l-4 border-purple-600 shadow-sm">
-              <span className="text-xs font-bold text-purple-600 uppercase">Session 3</span>
-              <h3 className="text-lg font-semibold text-gray-800 mt-1">Samedi Après-midi (24 Avril 2027)</h3>
-              <p className="text-sm font-medium text-gray-600 mt-1">Déploiement et Restitution des Projets</p>
-              <ul className="list-disc list-inside text-sm text-gray-700 mt-2 space-y-1">
-                <li>Intégration de scripts prédictifs dans des interfaces interactives (Dashboards).</li>
-                <li>Bonnes pratiques de reproductibilité et de robustesse des modèles.</li>
-                <li>Synthèse, discussions ouvertes et remise des attestations de participation.</li>
-              </ul>
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <div>
+                  <span className="text-xs font-bold text-purple-600 uppercase">Session 3</span>
+                  <h3 className="text-lg font-semibold text-gray-800 mt-1">Samedi 24 Avril 2027 (15h00 - 19h00)</h3>
+                </div>
+                <span className="bg-purple-50 text-purple-700 text-xs font-medium px-2.5 py-1 rounded-md border border-purple-200">
+                  Pr. A. Kerkri
+                </span>
+              </div>
+              <p className="text-sm text-gray-700 mt-3 leading-relaxed">
+                Perspectives avancées, architectures intelligentes et clôture des ateliers pratiques de la conférence.
+              </p>
             </div>
+
           </div>
         </div>
 
         {/* Section Inscription / Contact */}
-        <div className="bg-blue-50 rounded-xl p-6 text-center border border-blue-100">
-          <h3 className="text-lg font-bold text-blue-900 mb-2">Rejoignez-nous</h3>
-          <p className="text-sm text-blue-700 mb-4">
-            Les places pour l'atelier pratique étant limitées, l'inscription se fait via le formulaire d'enregistrement de la conférence.
+        <div className="bg-gray-50 rounded-xl p-6 text-center border border-gray-200">
+          <h3 className="text-lg font-bold text-gray-900 mb-2">Informations pratiques</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            L'accès aux ateliers est inclus pour les participants inscrits à la conférence ICSMAI 2027.
           </p>
           <a
             href="/"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2.5 rounded-lg transition-colors shadow"
+            className="inline-block bg-gray-900 hover:bg-gray-800 text-white font-medium px-6 py-2.5 rounded-lg transition-colors shadow"
           >
-            Retour à l'accueil de la conférence
+            Retour à l'accueil
           </a>
         </div>
 
