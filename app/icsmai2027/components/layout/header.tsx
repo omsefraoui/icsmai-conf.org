@@ -13,21 +13,20 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("")
   const [isHeroSection, setIsHeroSection] = useState(true)
 
-  // Use useMemo to fix the exhaustive-deps warning
   const navItems = useMemo(
     () => [
-      { name: "About", href: "#about" },
-      { name: "Keynotes", href: "#keynotes" },
-      { name: "Committees", href: "#committees" },
-      { name: "Topics", href: "#topics" },
-      { name: "Submission", href: "#submission" },
-      { name: "Dates", href: "#dates" },
-      { name: "Registration", href: "#registration" },
-      {name: "HandsOnWorkshop", href: "#atelier"},
-      { name: "Program", href: "#program" },
-      { name: "Sponsors", href: "#sponsors" },
-      { name: "Gallery", href: "#gallery" },
-      { name: "Contact", href: "#contact" },
+      { name: "About", href: "/#about", isExternal: false },
+      { name: "Keynotes", href: "/#keynotes", isExternal: false },
+      { name: "Committees", href: "/#committees", isExternal: false },
+      { name: "Topics", href: "/#topics", isExternal: false },
+      { name: "Submission", href: "/#submission", isExternal: false },
+      { name: "Dates", href: "/#dates", isExternal: false },
+      { name: "Registration", href: "/#registration", isExternal: false },
+      { name: "Workshop", href: "/atelier", isExternal: true },
+      { name: "Program", href: "/#program", isExternal: false },
+      { name: "Sponsors", href: "/#sponsors", isExternal: false },
+      { name: "Gallery", href: "/#gallery", isExternal: false },
+      { name: "Contact", href: "/#contact", isExternal: false },
     ],
     [],
   )
@@ -36,13 +35,11 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
 
-      // Check if we're in the hero section
-      const heroHeight = document.querySelector(".hero-section")?.getBoundingClientRect().height || 0
-      //console.log(heroHeight, window.scrollY)
+      const heroElement = document.querySelector(".hero-section")
+      const heroHeight = heroElement ? heroElement.getBoundingClientRect().height : 0
       setIsHeroSection(window.scrollY < heroHeight - 100)
 
-      // Find the current active section
-      const sections = navItems.map((item) => item.href.substring(1))
+      const sections = navItems.filter(item => !item.isExternal).map((item) => item.href.substring(2))
       const scrollPosition = window.scrollY + 100
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -70,9 +67,7 @@ export default function Header() {
         transition={{ duration: 0.4 }}
         className={cn(
           "fixed top-0 w-full z-50",
-          isScrolled
-            ? "bg-transparent backdrop-blur-md shadow-sm"
-            : ""
+          isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
         )}
       >
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -92,30 +87,33 @@ export default function Header() {
             </motion.div>
           </Link>
 
-          <nav className="hidden md:flex gap-6">
+          {/* Navigation Desktop */}
+          <nav className="hidden md:flex gap-5 items-center">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
                 className="relative"
               >
                 <Link
                   href={item.href}
                   className={cn(
                     "text-sm font-medium transition-colors",
-                    isHeroSection
-                      ? activeSection === item.href.substring(1)
-                        ? "text-hero-primary"
-                        : "text-hero-muted hover:text-hero-primary"
-                      : activeSection === item.href.substring(1)
-                        ? "text-primary"
-                        : "text-muted-foreground hover:text-primary",
+                    item.isExternal 
+                      ? "text-primary font-semibold hover:underline"
+                      : isHeroSection
+                        ? activeSection === item.href.substring(2)
+                          ? "text-hero-primary"
+                          : "text-hero-muted hover:text-hero-primary"
+                        : activeSection === item.href.substring(2)
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary",
                   )}
                 >
                   {item.name}
-                  {activeSection === item.href.substring(1) && (
+                  {!item.isExternal && activeSection === item.href.substring(2) && (
                     <motion.div
                       className={cn(
                         "absolute -bottom-1 left-0 right-0 h-0.5",
@@ -140,17 +138,12 @@ export default function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button
-                asChild
-                size="sm"
-                className={cn(
-                  "hidden md:inline-flex",
-                )}
-              >
-                <Link href="#registration">Register Now</Link>
+              <Button asChild size="sm" className="hidden md:inline-flex">
+                <Link href="/#registration">Register Now</Link>
               </Button>
             </motion.div>
 
+            {/* Menu Mobile */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button
@@ -180,35 +173,25 @@ export default function Header() {
                       <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
                         <span className="text-primary-foreground font-bold">IC</span>
                       </div>
-                      <span
-                        className={cn("font-bold text-lg", isHeroSection ? "text-hero-foreground" : "text-foreground")}
-                      >
+                      <span className={cn("font-bold text-lg", isHeroSection ? "text-hero-foreground" : "text-foreground")}>
                         ICSMAI 2027
                       </span>
                     </Link>
                   </div>
 
-                  <nav className="flex flex-col py-4">
+                  <nav className="flex flex-col py-4 overflow-y-auto">
                     {navItems.map((item) => (
                       <SheetClose key={item.name} asChild>
                         <Link
                           href={item.href}
                           className={cn(
-                            "text-lg font-medium transition-colors py-3 px-4 flex items-center justify-between",
-                            isHeroSection
-                              ? activeSection === item.href.substring(1)
-                                ? "text-hero-primary bg-hero-primary/10"
-                                : "text-hero-foreground hover:text-hero-primary"
-                              : activeSection === item.href.substring(1)
-                                ? "text-primary bg-primary/5"
-                                : "text-foreground hover:text-primary",
+                            "text-base font-medium transition-colors py-3 px-4 flex items-center justify-between",
+                            item.isExternal ? "text-primary font-bold bg-primary/10" : "",
                           )}
                         >
                           {item.name}
-                          {activeSection === item.href.substring(1) && (
-                            <ChevronRight
-                              className={cn("h-4 w-4", isHeroSection ? "text-hero-primary" : "text-primary")}
-                            />
+                          {!item.isExternal && activeSection === item.href.substring(2) && (
+                            <ChevronRight className={cn("h-4 w-4", isHeroSection ? "text-hero-primary" : "text-primary")} />
                           )}
                         </Link>
                       </SheetClose>
@@ -222,11 +205,8 @@ export default function Header() {
                     )}
                   >
                     <SheetClose asChild>
-                      <Button
-                        asChild
-                        className={cn("w-full", isHeroSection && "bg-hero-primary hover:bg-hero-primary/90")}
-                      >
-                        <Link href="#registration">Register Now</Link>
+                      <Button asChild className={cn("w-full", isHeroSection && "bg-hero-primary hover:bg-hero-primary/90")}>
+                        <Link href="/#registration">Register Now</Link>
                       </Button>
                     </SheetClose>
                   </div>
@@ -239,4 +219,3 @@ export default function Header() {
     </AnimatePresence>
   )
 }
-
