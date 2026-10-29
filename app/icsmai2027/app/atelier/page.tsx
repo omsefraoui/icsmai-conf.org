@@ -10,7 +10,34 @@ import {
   HelpCircle,
   FileSpreadsheet
 } from "lucide-react";
-import { calculateLogisticRisk } from "@/lib/medical-ai-engine";
+
+// Fonction de calcul de risque logistique intégrée directement
+function calculateLogisticRisk(p: { age?: number; pas?: number; cholesterol?: number; hdl?: number; tabac?: number; diabete?: number; imc?: number; sexe?: number }): number {
+  const age = p.age ?? 55;
+  const pas = p.pas ?? 130;
+  const cholesterol = p.cholesterol ?? 2.0;
+  const hdl = p.hdl ?? 0.5;
+  const tabac = p.tabac ?? 0;
+  const diabete = p.diabete ?? 0;
+  const imc = p.imc ?? 27;
+  const sexe = p.sexe ?? 1;
+
+  const logit =
+    0.065 * (age - 55) +
+    0.0012 * Math.pow(age - 55, 2) +
+    0.45 * sexe +
+    0.02 * (pas - 130) +
+    (pas >= 160 ? 0.6 : 0) +
+    0.85 * (cholesterol - 2.0) -
+    3.0 * (hdl - 0.5) +
+    0.85 * tabac +
+    0.7 * diabete +
+    0.4 * tabac * diabete +
+    0.03 * (imc - 27) -
+    1.2;
+
+  return 1 / (1 + Math.exp(-logit));
+}
 
 export default function AtelierMedicalAIPage() {
   const [activeStep, setActiveStep] = useState<number>(1);
