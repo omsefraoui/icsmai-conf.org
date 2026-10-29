@@ -27,6 +27,7 @@ export default function Home() {
       {/*<Acknowledgment/>*/}
       <Dates />
       <Registration />
+      <HandsOnWorkshop />
      {/* <Program /> */}
       <Sponsors />
       <Gallery />
