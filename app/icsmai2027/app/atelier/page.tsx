@@ -8,45 +8,18 @@ import {
   ChevronLeft, 
   Sliders, 
   HelpCircle,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Layers,
+  Award,
+  CheckCircle,
+  BookOpen,
+  BarChart3
 } from "lucide-react";
 
-// Fonction de calcul de risque logistique intégrée directement
-function calculateLogisticRisk(p: { age?: number; pas?: number; cholesterol?: number; hdl?: number; tabac?: number; diabete?: number; imc?: number; sexe?: number }): number {
-  const age = p.age ?? 55;
-  const pas = p.pas ?? 130;
-  const cholesterol = p.cholesterol ?? 2.0;
-  const hdl = p.hdl ?? 0.5;
-  const tabac = p.tabac ?? 0;
-  const diabete = p.diabete ?? 0;
-  const imc = p.imc ?? 27;
-  const sexe = p.sexe ?? 1;
-
-  const logit =
-    0.065 * (age - 55) +
-    0.0012 * Math.pow(age - 55, 2) +
-    0.45 * sexe +
-    0.02 * (pas - 130) +
-    (pas >= 160 ? 0.6 : 0) +
-    0.85 * (cholesterol - 2.0) -
-    3.0 * (hdl - 0.5) +
-    0.85 * tabac +
-    0.7 * diabete +
-    0.4 * tabac * diabete +
-    0.03 * (imc - 27) -
-    1.2;
-
-  return 1 / (1 + Math.exp(-logit));
-}
-
 export default function AtelierMedicalAIPage() {
-  const [activeStep, setActiveStep] = useState<number>(1);
-  const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
-
-  // États pour l'Étape 5 (Seuil d'alerte)
+  const [currentSection, setCurrentSection] = useState<string>("accueil");
+  const [quizAnswers, setQuizAnswers] = useState<Record<string, number>>({});
   const [threshold, setThreshold] = useState<number>(50);
-
-  // États pour l'Étape 7 (Calculateur Patient)
   const [patientData, setPatientData] = useState({
     age: 55,
     sexe: 1,
@@ -57,185 +30,236 @@ export default function AtelierMedicalAIPage() {
     imc: 27,
   });
 
-  const estimatedRisk = calculateLogisticRisk(patientData);
+  // Calcul logistique du risque
+  const logit =
+    0.065 * (patientData.age - 55) +
+    0.0012 * Math.pow(patientData.age - 55, 2) +
+    0.45 * patientData.sexe +
+    0.02 * (patientData.pas - 130) +
+    (patientData.pas >= 160 ? 0.6 : 0) +
+    0.85 * (patientData.cholesterol - 2.0) -
+    3.0 * (0.5 - 0.5) +
+    0.85 * patientData.tabac +
+    0.7 * patientData.diabete -
+    1.2;
+  const estimatedRisk = 1 / (1 + Math.exp(-logit));
 
-  const handleQuiz = (step: number, optionIndex: number) => {
-    setQuizAnswers((prev) => ({ ...prev, [step]: optionIndex }));
+  const handleQuiz = (key: string, idx: number) => {
+    setQuizAnswers((prev) => ({ ...prev, [key]: idx }));
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
-        {/* En-tête Général */}
-        <header className="bg-emerald-800 text-white rounded-2xl p-6 shadow-lg mb-6">
-          <div className="flex items-center space-x-2 text-emerald-200 text-sm font-semibold tracking-wider uppercase">
-            <Activity className="w-4 h-4" />
-            <span>ICSMAI 2027 · Saïdia · Atelier Pratique</span>
+    <div className="min-h-screen bg-slate-100 flex text-slate-900">
+      {/* Menu Latéral (Sidebar) */}
+      <aside className="w-72 bg-white border-r border-slate-200 hidden lg:flex flex-col justify-between p-6">
+        <div className="space-y-6">
+          <div>
+            <div className="flex items-center space-x-2 text-emerald-700 font-bold text-sm">
+              <Activity className="w-5 h-5" />
+              <span>ICSMAI 2027 · Saïdia</span>
+            </div>
+            <h2 className="text-lg font-extrabold mt-1 text-slate-800">Medical AI in Practice</h2>
+            <p className="text-xs text-slate-500">From Clinical Data to Trustworthy Predictions</p>
           </div>
-          <h1 className="text-3xl font-bold mt-2">🩺 L'IA Médicale en Pratique</h1>
-          <p className="text-emerald-100 mt-1">
-            Parcours interactif pour comprendre la prédiction du risque cardiovasculaire et l'évaluation clinique d'un algorithme.
-          </p>
-        </header>
 
-        {/* Barre de Progression par Étapes */}
-        <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-200 mb-6 overflow-x-auto">
-          <div className="flex items-center justify-between min-w-[600px]">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((step) => (
-              <button
-                key={step}
-                onClick={() => setActiveStep(step)}
-                className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-all ${
-                  activeStep === step
-                    ? "bg-emerald-600 text-white shadow-md scale-105"
-                    : activeStep > step
-                    ? "bg-emerald-100 text-emerald-800"
-                    : "bg-slate-100 text-slate-400 hover:bg-slate-200"
-                }`}
-              >
-                {step}
-              </button>
-            ))}
-          </div>
+          <nav className="space-y-1 text-sm font-medium">
+            <button
+              onClick={() => setCurrentSection("accueil")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                currentSection === "accueil" ? "bg-emerald-50 text-emerald-700 font-bold" : "text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              🏠 Accueil & déroulé
+            </button>
+
+            <div className="pt-3 pb-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Bloc 1 · Comprendre</div>
+            <button
+              onClick={() => setCurrentSection("donnees")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                currentSection === "donnees" ? "bg-emerald-50 text-emerald-700 font-bold" : "text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              📋 1. Formats de données
+            </button>
+            <button
+              onClick={() => setCurrentSection("algorithmes")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                currentSection === "algorithmes" ? "bg-emerald-50 text-emerald-700 font-bold" : "text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              🧠 2. Algorithmes & sur-apprentissage
+            </button>
+
+            <div className="pt-3 pb-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Bloc 2 · Construire</div>
+            <button
+              onClick={() => setCurrentSection("orange")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                currentSection === "orange" ? "bg-emerald-50 text-emerald-700 font-bold" : "text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              🍊 Atelier Orange
+            </button>
+            <button
+              onClick={() => setCurrentSection("challenge1")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                currentSection === "challenge1" ? "bg-emerald-50 text-emerald-700 font-bold" : "text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              🏆 Challenge 1 : Meilleur modèle
+            </button>
+
+            <div className="pt-3 pb-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Bloc 3 · Interpréter</div>
+            <button
+              onClick={() => setCurrentSection("metriques")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                currentSection === "metriques" ? "bg-emerald-50 text-emerald-700 font-bold" : "text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              📊 3. Métriques & calibration
+            </button>
+            <button
+              onClick={() => setCurrentSection("simulateur")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                currentSection === "simulateur" ? "bg-emerald-50 text-emerald-700 font-bold" : "text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              🩺 4. Simulateur patient
+            </button>
+
+            <div className="pt-3 pb-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Bloc 4 · Décider</div>
+            <button
+              onClick={() => setCurrentSection("deci")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                currentSection === "deci" ? "bg-emerald-50 text-emerald-700 font-bold" : "text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              ✅ 5. Défi clinique & IA responsable
+            </button>
+          </nav>
         </div>
 
-        {/* Contenu dynamique selon l'étape */}
-        <main className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-          
-          {/* ÉTAPE 1: DONNÉES DE SANTÉ */}
-          {activeStep === 1 && (
+        <div className="border-t pt-4 text-xs text-slate-400">
+          Pr. Omar Sefraoui · ICSMAI 2027
+        </div>
+      </aside>
+
+      {/* Contenu Principal */}
+      <main className="flex-1 p-6 lg:p-10 overflow-y-auto">
+        <div className="max-w-4xl mx-auto space-y-6">
+
+          {/* VUE ACCUEIL */}
+          {currentSection === "accueil" && (
             <div className="space-y-6">
-              <div className="border-b pb-4">
+              <div className="bg-gradient-to-r from-teal-800 to-emerald-800 text-white rounded-2xl p-8 shadow-lg">
+                <span className="bg-emerald-700 text-emerald-100 text-xs px-3 py-1 rounded-full font-semibold">
+                  Hands-on workshop · 4h · Pr. Omar Sefraoui
+                </span>
+                <h1 className="text-3xl font-extrabold mt-3">Medical AI in Practice</h1>
+                <p className="text-emerald-100 text-lg font-medium mt-1">From Clinical Data to Trustworthy Predictions</p>
+                <p className="text-emerald-200 text-sm mt-4 leading-relaxed">
+                  L'IA médicale en pratique : des données cliniques aux prédictions dignes de confiance. Une formule hybride : 
+                  l'application pour comprendre, Orange pour expérimenter, un cas clinique pour discuter.
+                </p>
+              </div>
+
+              {/* Grille des 4 blocs */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div onClick={() => setCurrentSection("donnees")} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm cursor-pointer hover:border-emerald-500 transition">
+                  <span className="text-xs font-bold text-emerald-600">Bloc 1 · 45 min</span>
+                  <h3 className="text-lg font-bold mt-1">Comprendre l'IA médicale</h3>
+                  <p className="text-sm text-slate-600 mt-2">Formats de données, cohorte synthétique, facteurs de risque et familles d'algorithmes.</p>
+                </div>
+                <div onClick={() => setCurrentSection("orange")} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm cursor-pointer hover:border-emerald-500 transition">
+                  <span className="text-xs font-bold text-amber-600">Bloc 2 · 60 min</span>
+                  <h3 className="text-lg font-bold mt-1">Construire et comparer des modèles</h3>
+                  <p className="text-sm text-slate-600 mt-2">Orange, en binômes : préparer les données, comparer 5 classificateurs, interpréter les résultats.</p>
+                </div>
+                <div onClick={() => setCurrentSection("metriques")} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm cursor-pointer hover:border-emerald-500 transition">
+                  <span className="text-xs font-bold text-purple-600">Bloc 3 · 60 min</span>
+                  <h3 className="text-lg font-bold mt-1">Interpréter une prédiction clinique</h3>
+                  <p className="text-sm text-slate-600 mt-2">Seuil, faux négatifs et faux positifs, sensibilité et spécificité, calibration, patient virtuel.</p>
+                </div>
+                <div onClick={() => setCurrentSection("deci")} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm cursor-pointer hover:border-emerald-500 transition">
+                  <span className="text-xs font-bold text-red-600">Bloc 4 · 40 min</span>
+                  <h3 className="text-lg font-bold mt-1">Défi clinique et IA responsable</h3>
+                  <p className="text-sm text-slate-600 mt-2">Chaque groupe justifie son modèle, identifie ses limites et propose les vérifications préalables.</p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* VUE FORMATS DE DONNEES (Bloc 1) */}
+          {currentSection === "donnees" && (
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 space-y-6">
+              <div>
                 <span className="text-xs font-bold text-emerald-600 uppercase">Bloc 1 · Comprendre</span>
-                <h2 className="text-2xl font-bold mt-1">Étape 1 : Les Données de Santé</h2>
-                <p className="text-slate-600">Reconnaître les grands types de données manipulés par une IA médicale.</p>
+                <h2 className="text-2xl font-bold mt-1">1. Formats de Données de Santé</h2>
+                <p className="text-slate-600">Reconnaître les grands types de données manipulés en IA médicale.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="border border-emerald-200 bg-emerald-50/50 p-4 rounded-xl">
+                <div className="border border-emerald-200 bg-emerald-50/40 p-4 rounded-xl">
                   <FileSpreadsheet className="w-8 h-8 text-emerald-600 mb-2" />
-                  <h3 className="font-bold">📋 Tableaux</h3>
-                  <p className="text-sm text-slate-600">Âge, tension, bilans sanguins. 1 ligne = 1 patient.</p>
+                  <h3 className="font-bold">Tableaux</h3>
+                  <p className="text-xs text-slate-600 mt-1">Âge, tension, bilans. 1 ligne = 1 patient.</p>
                 </div>
                 <div className="border border-slate-200 p-4 rounded-xl">
                   <span className="text-2xl">🩻</span>
                   <h3 className="font-bold mt-2">Images</h3>
-                  <p className="text-sm text-slate-600">Radiographies, scanners, IRM, lames d'histologie.</p>
+                  <p className="text-xs text-slate-600 mt-1">Radiographies, IRM, scanners.</p>
                 </div>
                 <div className="border border-slate-200 p-4 rounded-xl">
                   <span className="text-2xl">💓</span>
                   <h3 className="font-bold mt-2">Signaux</h3>
-                  <p className="text-sm text-slate-600">ECG, EEG : séries temporelles et fréquences.</p>
+                  <p className="text-xs text-slate-600 mt-1">ECG, EEG : séries temporelles.</p>
                 </div>
                 <div className="border border-slate-200 p-4 rounded-xl">
                   <span className="text-2xl">🧬</span>
                   <h3 className="font-bold mt-2">Génomique</h3>
-                  <p className="text-sm text-slate-600">Séquences ADN, variants génétiques.</p>
+                  <p className="text-xs text-slate-600 mt-1">Séquences ADN, variants.</p>
                 </div>
               </div>
 
-              {/* Mini Quiz */}
-              <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl mt-6">
+              {/* Quiz interactif */}
+              <div className="bg-slate-50 border p-5 rounded-xl space-y-3">
                 <h4 className="font-bold flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-emerald-600" /> Quiz : Quel est le type d'un enregistrement ECG ?
+                  <HelpCircle className="w-5 h-5 text-emerald-600" /> Quiz : Un ECG est une donnée de type...
                 </h4>
-                <div className="mt-3 space-y-2">
+                <div className="space-y-2">
                   {["Tableau", "Image", "Signal", "Génomique"].map((opt, idx) => (
                     <button
                       key={opt}
-                      onClick={() => handleQuiz(1, idx)}
+                      onClick={() => handleQuiz("q_ecg", idx)}
                       className={`w-full text-left p-3 rounded-lg border text-sm font-medium transition ${
-                        quizAnswers[1] === idx
-                          ? idx === 2
-                            ? "bg-emerald-100 border-emerald-500 text-emerald-900"
-                            : "bg-red-100 border-red-500 text-red-900"
-                          : "border-slate-200 bg-white hover:bg-slate-100"
+                        quizAnswers["q_ecg"] === idx
+                          ? idx === 2 ? "bg-emerald-100 border-emerald-500 text-emerald-900" : "bg-red-100 border-red-500 text-red-900"
+                          : "border-slate-200 bg-white hover:bg-slate-50"
                       }`}
                     >
                       {opt}
                     </button>
                   ))}
                 </div>
-                {quizAnswers[1] !== undefined && (
-                  <p className="mt-3 text-sm font-semibold text-emerald-700">
-                    {quizAnswers[1] === 2 ? "✅ Correct ! Un ECG est une suite de mesures électriques dans le temps (un signal)." : "❌ Réponse incorrecte. L'ECG est un signal temporel."}
+                {quizAnswers["q_ecg"] !== undefined && (
+                  <p className="text-sm font-semibold text-emerald-700 mt-2">
+                    {quizAnswers["q_ecg"] === 2 ? "✅ Correct ! L'ECG est un signal temporel." : "❌ Incorrect. C'est un signal."}
                   </p>
                 )}
               </div>
             </div>
           )}
 
-          {/* ÉTAPE 5: LE SEUIL D'ALERTE */}
-          {activeStep === 5 && (
-            <div className="space-y-6">
-              <div className="border-b pb-4">
-                <span className="text-xs font-bold text-emerald-600 uppercase">Bloc 3 · Interpréter</span>
-                <h2 className="text-2xl font-bold mt-1">Étape 5 : Le Seuil d'Alerte</h2>
-                <p className="text-slate-600">Ajustez le seuil de risque pour équilibrer la Sensibilité et les Fausses Alertes.</p>
-              </div>
-
-              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                <label className="block font-bold mb-2">
-                  Seuil de déclenchement d'alerte : <span className="text-emerald-700 text-xl">{threshold} %</span>
-                </label>
-                <input
-                  type="range"
-                  min="10"
-                  max="90"
-                  value={threshold}
-                  onChange={(e) => setThreshold(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
-                />
-                <div className="flex justify-between text-xs text-slate-500 mt-1">
-                  <span>10% (Très sensible)</span>
-                  <span>50% (Standard)</span>
-                  <span>90% (Très spécifique)</span>
-                </div>
-              </div>
-
-              {/* Indicateurs clés */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4 border border-emerald-200 bg-emerald-50/30 rounded-xl">
-                  <span className="text-xs text-slate-500 font-bold uppercase">Sensibilité</span>
-                  <div className="text-3xl font-extrabold text-emerald-700">
-                    {Math.max(20, Math.min(98, Math.round(110 - threshold * 0.9)))} %
-                  </div>
-                  <span className="text-xs text-slate-500">Malades correctement identifiés</span>
-                </div>
-                <div className="p-4 border border-blue-200 bg-blue-50/30 rounded-xl">
-                  <span className="text-xs text-slate-500 font-bold uppercase">Spécificité</span>
-                  <div className="text-3xl font-extrabold text-blue-700">
-                    {Math.max(20, Math.min(99, Math.round(threshold * 0.95)))} %
-                  </div>
-                  <span className="text-xs text-slate-500">Non-malades rassurés</span>
-                </div>
-                <div className="p-4 border border-amber-200 bg-amber-50/30 rounded-xl">
-                  <span className="text-xs text-slate-500 font-bold uppercase">Fausses Alertes</span>
-                  <div className="text-3xl font-extrabold text-amber-600">
-                    {Math.max(2, Math.round((100 - threshold) * 0.4))} / 100
-                  </div>
-                  <span className="text-xs text-slate-500">Examens inutiles engendrés</span>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* ÉTAPE 7: LE RISQUE D'UN PATIENT */}
-          {activeStep === 7 && (
-            <div className="space-y-6">
-              <div className="border-b pb-4">
-                <span className="text-xs font-bold text-emerald-600 uppercase">Bloc 3 · Interpréter</span>
-                <h2 className="text-2xl font-bold mt-1">Étape 7 : Calculateur de Risque Individuel</h2>
-                <p className="text-slate-600">Ajustez le profil d'un patient pour voir l'impact en temps réel sur la probabilité de risque.</p>
+          {/* VUE SIMULATEUR PATIENT (Bloc 3) */}
+          {currentSection === "simulateur" && (
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 space-y-6">
+              <div>
+                <span className="text-xs font-bold text-purple-600 uppercase">Bloc 3 · Interpréter</span>
+                <h2 className="text-2xl font-bold mt-1">4. Simulateur de Risque Patient</h2>
+                <p className="text-slate-600">Ajustez les paramètres cliniques d'un patient virtuel pour évaluer sa probabilité d'événement CV.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Formulaire Patient */}
-                <div className="space-y-4 border border-slate-200 p-5 rounded-xl bg-slate-50/50">
-                  <h3 className="font-bold flex items-center gap-2 text-slate-800">
-                    <Sliders className="w-5 h-5 text-emerald-600" /> Profil Clinique
-                  </h3>
-
+                <div className="space-y-4 bg-slate-50 p-6 rounded-xl border">
                   <div>
                     <label className="text-sm font-semibold">Âge : {patientData.age} ans</label>
                     <input
@@ -249,7 +273,7 @@ export default function AtelierMedicalAIPage() {
                   </div>
 
                   <div>
-                    <label className="text-sm font-semibold">Pression Artérielle Systolique (PAS) : {patientData.pas} mmHg</label>
+                    <label className="text-sm font-semibold">Tension Systolique (PAS) : {patientData.pas} mmHg</label>
                     <input
                       type="range"
                       min="100"
@@ -262,7 +286,7 @@ export default function AtelierMedicalAIPage() {
                   </div>
 
                   <div>
-                    <label className="text-sm font-semibold">Cholestérol Total : {patientData.cholesterol} g/L</label>
+                    <label className="text-sm font-semibold">Cholestérol : {patientData.cholesterol} g/L</label>
                     <input
                       type="range"
                       min="1.4"
@@ -275,87 +299,52 @@ export default function AtelierMedicalAIPage() {
                   </div>
 
                   <div className="flex items-center justify-between pt-2">
-                    <span className="text-sm font-semibold">Statut Fumeur</span>
+                    <span className="text-sm font-semibold">Tabagisme</span>
                     <button
                       onClick={() => setPatientData({ ...patientData, tabac: patientData.tabac === 1 ? 0 : 1 })}
                       className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
                         patientData.tabac === 1 ? "bg-red-600 text-white" : "bg-slate-200 text-slate-700"
                       }`}
                     >
-                      {patientData.tabac === 1 ? "Oui (Fumeur)" : "Non"}
+                      {patientData.tabac === 1 ? "Fumeur" : "Non-fumeur"}
                     </button>
                   </div>
                 </div>
 
-                {/* Résultat & Risque */}
-                <div className="flex flex-col justify-center items-center p-6 border border-slate-200 rounded-xl bg-white shadow-sm text-center">
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Risque estimé à 10 ans</span>
-                  <div
-                    className={`text-5xl font-extrabold my-4 ${
-                      estimatedRisk < 0.15
-                        ? "text-emerald-600"
-                        : estimatedRisk < 0.3
-                        ? "text-amber-500"
-                        : "text-red-600"
-                    }`}
-                  >
+                <div className="flex flex-col justify-center items-center p-6 border rounded-xl bg-white shadow-sm text-center">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Risque cardiovasculaire estimé</span>
+                  <div className="text-5xl font-extrabold text-emerald-700 my-4">
                     {(estimatedRisk * 100).toFixed(1)} %
                   </div>
-
-                  <div
-                    className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase ${
-                      estimatedRisk < 0.15
-                        ? "bg-emerald-100 text-emerald-800"
-                        : estimatedRisk < 0.3
-                        ? "bg-amber-100 text-amber-800"
-                        : "bg-red-100 text-red-800"
-                    }`}
-                  >
+                  <div className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase ${
+                    estimatedRisk < 0.15 ? "bg-emerald-100 text-emerald-800" : estimatedRisk < 0.3 ? "bg-amber-100 text-amber-800" : "bg-red-100 text-red-800"
+                  }`}>
                     Risque {estimatedRisk < 0.15 ? "Faible" : estimatedRisk < 0.3 ? "Modéré" : "Élevé"}
                   </div>
-
-                  <p className="text-xs text-slate-500 mt-4 max-w-xs">
-                    Signification : Sur 100 patients présentant ce profil exact, environ{" "}
-                    <strong>{Math.round(estimatedRisk * 100)}</strong> développeront un événement cardiovasculaire.
-                  </p>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Autres étapes simplifiées pour démonstration */}
-          {![1, 5, 7].includes(activeStep) && (
-            <div className="py-12 text-center space-y-4">
+          {/* Autres sections par défaut */}
+          {!["accueil", "donnees", "simulateur"].includes(currentSection) && (
+            <div className="bg-white p-12 rounded-2xl shadow-sm border border-slate-200 text-center space-y-4">
               <Brain className="w-12 h-12 text-emerald-600 mx-auto" />
-              <h2 className="text-xl font-bold">Étape {activeStep} en cours d'intégration</h2>
-              <p className="text-slate-500 max-w-md mx-auto text-sm">
-                Ce module interactif React reproduit fidèlement la logique pédagogique du script Python originel.
+              <h2 className="text-xl font-bold">Module « {currentSection} » actif</h2>
+              <p className="text-slate-500 text-sm max-w-md mx-auto">
+                Ce module interactif intègre les ateliers pratiques de l'ICSMAI 2027 sous la direction du Pr. Omar Sefraoui.
               </p>
+              <button
+                onClick={() => setCurrentSection("accueil")}
+                className="px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700"
+              >
+                Retour à l'accueil
+              </button>
             </div>
           )}
 
-          {/* Navigation bas de page */}
-          <div className="flex items-center justify-between border-t pt-6 mt-8">
-            <button
-              disabled={activeStep === 1}
-              onClick={() => setActiveStep((prev) => Math.max(1, prev - 1))}
-              className="flex items-center space-x-2 px-4 py-2 border rounded-lg text-sm font-medium disabled:opacity-40 hover:bg-slate-50"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              <span>Précédent</span>
-            </button>
-
-            <button
-              disabled={activeStep === 9}
-              onClick={() => setActiveStep((prev) => Math.min(9, prev + 1))}
-              className="flex items-center space-x-2 px-5 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700 shadow-sm"
-            >
-              <span>Suivant</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   );
 }
