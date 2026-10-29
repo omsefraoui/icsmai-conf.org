@@ -1,0 +1,14 @@
+Medical AI in Practice — From Clinical Data to Trustworthy Predictions · ICSMAI 2027 · Saïdia
+Kit Orange — données 100 % synthétiques, usage pédagogique
+
+Cohorte : 1500 patients, 25 % en test, prévalence 20%, graine 42.
+
+1_apprentissage.tab : 1125 patients pour entraîner les modèles
+2_test.tab          : 375 patients JAMAIS vus (les mêmes que dans l'application)
+3_hopital_B.tab     : 3000 patients d'un autre hôpital (plus âgés, tensiomètre qui sous-estime la PAS)
+workflow_icsmai2027.ows : workflow Orange prêt à l'emploi (File > Open)
+
+Format .tab : ligne 1 = noms, ligne 2 = types (continuous / discrete), ligne 3 = rôles (class = cible, meta = information non utilisée pour apprendre).
+La colonne meta « risque_vrai » est le risque simulé de chaque patient : connu seulement parce que les données sont synthétiques.
+
+Variables : age = Âge (ans), sexe = Sexe (1 = homme), imc = IMC (kg/m²), pas = PA systolique (mmHg), fc = Fréquence cardiaque (bpm), cholesterol = Cholestérol total (g/L), hdl = HDL-cholestérol (g/L), glycemie = Glycémie à jeun (g/L), creatinine = Créatinine (mg/L), tabac = Tabagisme actif, diabete = Diabète, evenement_cv = événement CV (0/1)
