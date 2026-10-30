@@ -15,18 +15,18 @@ export default function Header() {
 
   const navItems = useMemo(
     () => [
-      { name: "About", href: "/#about", isExternal: false },
-      { name: "Keynotes", href: "/#keynotes", isExternal: false },
-      { name: "Committees", href: "/#committees", isExternal: false },
-      { name: "Topics", href: "/#topics", isExternal: false },
-      { name: "Submission", href: "/#submission", isExternal: false },
-      { name: "Dates", href: "/#dates", isExternal: false },
-      { name: "Registration", href: "/#registration", isExternal: false },
-      { name: "Workshop", href: "/atelier", isExternal: true },
-      { name: "Program", href: "/#program", isExternal: false },
-      { name: "Sponsors", href: "/#sponsors", isExternal: false },
-      { name: "Gallery", href: "/#gallery", isExternal: false },
-      { name: "Contact", href: "/#contact", isExternal: false },
+      { name: "About", href: "/#about" },
+      { name: "Keynotes", href: "/#keynotes" },
+      { name: "Committees", href: "/#committees" },
+      { name: "Topics", href: "/#topics" },
+      { name: "Submission", href: "/#submission" },
+      { name: "Dates", href: "/#dates" },
+      { name: "Registration", href: "/#registration" },
+      { name: "Workshop", href: "/#atelier" },
+      { name: "Program", href: "/#program" },
+      { name: "Sponsors", href: "/#sponsors" },
+      { name: "Gallery", href: "/#gallery" },
+      { name: "Contact", href: "/#contact" },
     ],
     [],
   )
@@ -39,7 +39,7 @@ export default function Header() {
       const heroHeight = heroElement ? heroElement.getBoundingClientRect().height : 0
       setIsHeroSection(window.scrollY < heroHeight - 100)
 
-      const sections = navItems.filter(item => !item.isExternal).map((item) => item.href.substring(2))
+      const sections = navItems.map((item) => item.href.replace("/#", ""))
       const scrollPosition = window.scrollY + 100
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -89,45 +89,48 @@ export default function Header() {
 
           {/* Navigation Desktop */}
           <nav className="hidden md:flex gap-5 items-center">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.03 }}
-                className="relative"
-              >
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "text-sm font-medium transition-colors",
-                    item.isExternal 
-                      ? "text-primary font-semibold hover:underline"
-                      : isHeroSection
-                        ? activeSection === item.href.substring(2)
-                          ? "text-hero-primary"
-                          : "text-hero-muted hover:text-hero-primary"
-                        : activeSection === item.href.substring(2)
-                          ? "text-primary"
-                          : "text-muted-foreground hover:text-primary",
-                  )}
+            {navItems.map((item, index) => {
+              const targetId = item.href.replace("/#", "")
+              const isActive = activeSection === targetId
+
+              return (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.03 }}
+                  className="relative"
                 >
-                  {item.name}
-                  {!item.isExternal && activeSection === item.href.substring(2) && (
-                    <motion.div
-                      className={cn(
-                        "absolute -bottom-1 left-0 right-0 h-0.5",
-                        isHeroSection ? "bg-hero-primary" : "bg-primary",
-                      )}
-                      layoutId="activeSection"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  )}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "text-sm font-medium transition-colors",
+                      isHeroSection
+                        ? isActive
+                          ? "text-hero-primary font-semibold"
+                          : "text-hero-muted hover:text-hero-primary"
+                        : isActive
+                          ? "text-primary font-semibold"
+                          : "text-muted-foreground hover:text-primary",
+                    )}
+                  >
+                    {item.name}
+                    {isActive && (
+                      <motion.div
+                        className={cn(
+                          "absolute -bottom-1 left-0 right-0 h-0.5",
+                          isHeroSection ? "bg-hero-primary" : "bg-primary",
+                        )}
+                        layoutId="activeSection"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
+                  </Link>
+                </motion.div>
+              )
+            })}
           </nav>
 
           <div className="flex items-center gap-4">
@@ -180,22 +183,27 @@ export default function Header() {
                   </div>
 
                   <nav className="flex flex-col py-4 overflow-y-auto">
-                    {navItems.map((item) => (
-                      <SheetClose key={item.name} asChild>
-                        <Link
-                          href={item.href}
-                          className={cn(
-                            "text-base font-medium transition-colors py-3 px-4 flex items-center justify-between",
-                            item.isExternal ? "text-primary font-bold bg-primary/10" : "",
-                          )}
-                        >
-                          {item.name}
-                          {!item.isExternal && activeSection === item.href.substring(2) && (
-                            <ChevronRight className={cn("h-4 w-4", isHeroSection ? "text-hero-primary" : "text-primary")} />
-                          )}
-                        </Link>
-                      </SheetClose>
-                    ))}
+                    {navItems.map((item) => {
+                      const targetId = item.href.replace("/#", "")
+                      const isActive = activeSection === targetId
+
+                      return (
+                        <SheetClose key={item.name} asChild>
+                          <Link
+                            href={item.href}
+                            className={cn(
+                              "text-base font-medium transition-colors py-3 px-4 flex items-center justify-between",
+                              isActive ? "text-primary font-bold bg-primary/10" : "text-foreground hover:text-primary",
+                            )}
+                          >
+                            {item.name}
+                            {isActive && (
+                              <ChevronRight className={cn("h-4 w-4", isHeroSection ? "text-hero-primary" : "text-primary")} />
+                            )}
+                          </Link>
+                        </SheetClose>
+                      )
+                    })}
                   </nav>
 
                   <div
