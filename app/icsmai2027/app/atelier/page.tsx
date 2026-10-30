@@ -26,14 +26,7 @@ export default function AtelierPage() {
             Hands-on workshop · 4 h · Pr. Omar Sefraoui · ICSMAI 2027, Saïdia
           </span>
         </div>
-        <a
-          href={ATELIER_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
-        >
-          Ouvrir en plein écran ↗
-        </a>
+        
       </div>
       <AtelierEmbed src={ATELIER_URL} />
     </main>
