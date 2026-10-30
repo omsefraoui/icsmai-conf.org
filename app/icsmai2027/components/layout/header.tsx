@@ -22,7 +22,7 @@ export default function Header() {
       { name: "Submission", href: "/#submission" },
       { name: "Dates", href: "/#dates" },
       { name: "Registration", href: "/#registration" },
-      { name: "Workshop", href: "/#atelier" },
+      { name: "HandsOnWorkshop", href: "/#atelier" },
       { name: "Program", href: "/#program" },
       { name: "Sponsors", href: "/#sponsors" },
       { name: "Gallery", href: "/#gallery" },

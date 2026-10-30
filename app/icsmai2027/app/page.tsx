@@ -27,8 +27,11 @@ export default function Home() {
       {/*<Acknowledgment/>*/}
       <Dates />
       <Registration />
-      <HandsOnWorkshop />
-     {/* <Program /> */}
+      {/* Ajout de l'id="atelier" ici pour que l'ancre du menu fonctionne */}
+      <div id="atelier" className="w-full">
+        <HandsOnWorkshop />
+      </div>
+      {/* <Program /> */}
       <Sponsors />
       <Gallery />
       <Contact />
