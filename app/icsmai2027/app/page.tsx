@@ -29,7 +29,7 @@ export default function Home() {
       <Registration />
       {/* Ajout de l'id="atelier" ici pour que l'ancre du menu fonctionne */}
       <div id="atelier" className="w-full">
-        <HandsOnWorkshop />
+        {/* <HandsOnWorkshop />*/}
       </div>
       {/* <Program /> */}
       <Sponsors />
