@@ -61,7 +61,7 @@ const SESSIONS: Session[] = [
     jour: "Vendredi 23 avril 2027",
     horaire: "15h00 – 19h00",
     titre: "Médecine Intelligente : Étapes et Simulations d'une Solution IA pour la Prédiction d'une Maladie",
-    animateur: "Pr. K. Ghoumid",
+    animateur: "Pr. .....",
     icone: Activity,
     couleur: {
       bord: "border-l-sky-600",
@@ -71,9 +71,9 @@ const SESSIONS: Session[] = [
     },
     points: [
       "Les étapes d'une solution d'IA médicale, de la question clinique au modèle",
-      "Préparer les données d'un cas réel de prédiction de maladie",
+     /* "Préparer les données d'un cas réel de prédiction de maladie",
       "Simulation : entraîner, tester et comparer plusieurs modèles",
-      "Lire les résultats et en discuter les limites",
+      "Lire les résultats et en discuter les limites",*/
     ],
   },
   {
@@ -82,7 +82,7 @@ const SESSIONS: Session[] = [
     horaire: "09h00 – 13h00",
     titre: "Medical AI in Practice : From Clinical Data to Trustworthy Predictions",
     sousTitre: "L'IA médicale en pratique : des données cliniques aux prédictions dignes de confiance",
-    animateur: "Pr. Omar Sefraoui",
+    animateur: "Pr. -----------------",
     icone: Brain,
     couleur: {
       bord: "border-l-emerald-600",
@@ -92,10 +92,10 @@ const SESSIONS: Session[] = [
     },
     points: [
       "Des données cliniques à un jeu de données exploitable",
-      "Entraîner puis tester des modèles, sans programmer (application en ligne et Orange)",
+      /*"Entraîner puis tester des modèles, sans programmer (application en ligne et Orange)",
       "Seuil de décision, sensibilité, spécificité, VPP : décider comme un clinicien",
       "Calibration et changement de population : une IA fiable… ailleurs aussi ?",
-      "Les questions à poser avant d'utiliser une IA à l'hôpital",
+      "Les questions à poser avant d'utiliser une IA à l'hôpital",*/
     ],
     lien: { href: "/atelier/pratique", label: "Aperçu de l'application de la session" },
   },
@@ -104,7 +104,7 @@ const SESSIONS: Session[] = [
     jour: "Samedi 24 avril 2027",
     horaire: "15h00 – 19h00",
     titre: "3D Slicer : Visualisation, segmentation et reconstruction 3D en imagerie médicale",
-    animateur: "Pr. Omar Sefraoui",
+    animateur: "Pr. --------",
     icone: Box,
     couleur: {
       bord: "border-l-violet-600",
@@ -114,9 +114,9 @@ const SESSIONS: Session[] = [
     },
     points: [
       "Prise en main de 3D Slicer, logiciel libre et gratuit d'imagerie médicale",
-      "Charger et explorer des images DICOM (scanner, IRM)",
+     /* "Charger et explorer des images DICOM (scanner, IRM)",
       "Segmentation manuelle et semi-automatique d'une structure anatomique",
-      "Reconstruction 3D, mesures et export du modèle (impression 3D)",
+      "Reconstruction 3D, mesures et export du modèle (impression 3D)",*/
     ],
   },
 ];
@@ -147,7 +147,7 @@ const PUBLIC: { icone: LucideIcon; titre: string; texte: string }[] = [
 const INCLUS = [
   "Participation aux trois sessions (12 heures)",
   "Supports : cahier du participant, données et applications",
-  "Pauses-café",
+  " Deux  déjeuners",
   "Attestation de participation",
 ];
 
