@@ -26,7 +26,7 @@ export default function AtelierPratiquePage() {
           </Link>
           <span className="text-base font-bold md:text-lg">Medical AI in Practice</span>
           <span className="text-sm text-emerald-100">
-            Session 2 · 4 h · Pr. Omar Sefraoui · ICSMAI 2027, Saïdia
+            Session 2 · 4 h · Pr. --- · ICSMAI 2027, Saïdia
           </span>
         </div>
       </div>
