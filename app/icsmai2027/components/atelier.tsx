@@ -40,7 +40,7 @@ export default function AtelierPage() {
                   <h3 className="text-lg font-semibold text-gray-800 mt-1">Vendredi 23 Avril 2027 (15h00 - 19h00)</h3>
                 </div>
                 <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded-md border border-blue-200">
-                  Pr. K. Ghoumid
+                  Pr. ---
                 </span>
               </div>
               <p className="text-sm text-gray-700 mt-3 leading-relaxed">
@@ -56,7 +56,7 @@ export default function AtelierPage() {
                   <h3 className="text-lg font-bold text-indigo-950 mt-1">Samedi 24 Avril 2027 (09h00 - 13h00)</h3>
                 </div>
                 <span className="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-md">
-                  Pr. Omar Sefraoui
+                  Pr. ---------
                 </span>
               </div>
               <div className="mt-3">
@@ -82,7 +82,7 @@ export default function AtelierPage() {
                   <h3 className="text-lg font-semibold text-gray-800 mt-1">Samedi 24 Avril 2027 (15h00 - 19h00)</h3>
                 </div>
                 <span className="bg-purple-50 text-purple-700 text-xs font-medium px-2.5 py-1 rounded-md border border-purple-200">
-                  Pr. A. Kerkri
+                  -------------
                 </span>
               </div>
               <p className="text-sm text-gray-700 mt-3 leading-relaxed">
