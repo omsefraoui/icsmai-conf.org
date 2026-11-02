@@ -97,7 +97,7 @@ const SESSIONS: Session[] = [
       "Calibration et changement de population : une IA fiable… ailleurs aussi ?",
       "Les questions à poser avant d'utiliser une IA à l'hôpital",*/
     ],
-    lien: { href: "/atelier/pratique", label: "Aperçu de l'application de la session" },
+   /* lien: { href: "/atelier/pratique", label: "Aperçu de l'application de la session" },*/
   },
   {
     numero: 3,
