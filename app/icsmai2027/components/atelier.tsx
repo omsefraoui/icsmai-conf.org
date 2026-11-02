@@ -61,7 +61,7 @@ const SESSIONS: Session[] = [
     jour: "Vendredi 23 avril 2027",
     horaire: "15h00 – 19h00",
     titre: "Médecine Intelligente : Étapes et Simulations d'une Solution IA pour la Prédiction d'une Maladie",
-    animateur: "Pr. .....",
+    animateur: "Pr. Kamal GHOUMID",
     icone: Activity,
     couleur: {
       bord: "border-l-sky-600",
@@ -82,7 +82,7 @@ const SESSIONS: Session[] = [
     horaire: "09h00 – 13h00",
     titre: "L'IA médicale en pratique : Des données cliniques aux prédictions dignes de confiance",
     /*sousTitre: "L'IA médicale en pratique : des données cliniques aux prédictions dignes de confiance",*/
-    animateur: "Pr. -----------------",
+    animateur: "Pr. Omar SEFRAOUI",
     icone: Brain,
     couleur: {
       bord: "border-l-emerald-600",
@@ -104,7 +104,7 @@ const SESSIONS: Session[] = [
     jour: "Samedi 24 avril 2027",
     horaire: "15h00 – 19h00",
     titre: "3D Slicer : Visualisation, segmentation et reconstruction 3D en imagerie médicale",
-    animateur: "Pr. --------",
+    animateur: "Pr. Abdelmounaim  KERKRI",
     icone: Box,
     couleur: {
       bord: "border-l-violet-600",
@@ -257,7 +257,7 @@ export default function HandsOnWorkshop() {
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 <li>
-                  <strong>1 h à 1 h 30</strong> de présentation des notions clés
+                  <strong>1 h </strong> de présentation des notions clés
                 </li>
                 <li>
                   <strong>Environ 3 h</strong> de pratique guidée, seul ou en binôme
@@ -302,7 +302,7 @@ export default function HandsOnWorkshop() {
 
       {/* ── Programme ──────────────────────────────────────────────────── */}
       <section id="programme" className="mx-auto max-w-5xl scroll-mt-20 px-4 py-14 md:px-6">
-        <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">Programme</p>
+        <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">Programme (provisoire)</p>
         <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Trois sessions, trois compétences</h2>
         <div className="mt-8 space-y-6">
           {SESSIONS.map((s) => {
