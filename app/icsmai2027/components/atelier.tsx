@@ -80,8 +80,8 @@ const SESSIONS: Session[] = [
     numero: 2,
     jour: "Samedi 24 avril 2027",
     horaire: "09h00 – 13h00",
-    titre: "Medical AI in Practice : From Clinical Data to Trustworthy Predictions",
-    sousTitre: "L'IA médicale en pratique : des données cliniques aux prédictions dignes de confiance",
+    titre: "L'IA médicale en pratique : Des données cliniques aux prédictions dignes de confiance",
+    /*sousTitre: "L'IA médicale en pratique : des données cliniques aux prédictions dignes de confiance",*/
     animateur: "Pr. -----------------",
     icone: Brain,
     couleur: {
