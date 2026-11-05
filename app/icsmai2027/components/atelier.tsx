@@ -30,7 +30,8 @@ import {
  * Tout le contenu modifiable (frais, dates, animateurs, contacts) est regroupé ci-dessous.
  */
 
-const FRAIS = "2 500 DH";
+const FRAIS_ETUDIANT = "2 400 DH";
+const FRAIS_PRO = "3 000 DH";
 const EMAIL = "icsmai.alsi@gmail.com";
 const WHATSAPP = "+212 671026271";
 const WHATSAPP_AFFICHE = "+212 671026271";
@@ -71,9 +72,6 @@ const SESSIONS: Session[] = [
     },
     points: [
       "Les étapes d'une solution d'IA médicale, de la question clinique au modèle",
-     /* "Préparer les données d'un cas réel de prédiction de maladie",
-      "Simulation : entraîner, tester et comparer plusieurs modèles",
-      "Lire les résultats et en discuter les limites",*/
     ],
   },
   {
@@ -81,7 +79,6 @@ const SESSIONS: Session[] = [
     jour: "Samedi 24 avril 2027",
     horaire: "09h00 – 13h00",
     titre: "L'IA médicale en pratique : Des données cliniques aux prédictions dignes de confiance",
-    /*sousTitre: "L'IA médicale en pratique : des données cliniques aux prédictions dignes de confiance",*/
     animateur: "Pr. Omar SEFRAOUI",
     icone: Brain,
     couleur: {
@@ -92,19 +89,14 @@ const SESSIONS: Session[] = [
     },
     points: [
       "Des données cliniques à un jeu de données exploitable",
-      /*"Entraîner puis tester des modèles, sans programmer (application en ligne et Orange)",
-      "Seuil de décision, sensibilité, spécificité, VPP : décider comme un clinicien",
-      "Calibration et changement de population : une IA fiable… ailleurs aussi ?",
-      "Les questions à poser avant d'utiliser une IA à l'hôpital",*/
     ],
-   /* lien: { href: "/atelier/pratique", label: "Aperçu de l'application de la session" },*/
   },
   {
     numero: 3,
     jour: "Samedi 24 avril 2027",
     horaire: "15h00 – 19h00",
     titre: "3D Slicer : Visualisation, segmentation et reconstruction 3D en imagerie médicale",
-    animateur: "Pr. Abdelmounaim  KERKRI",
+    animateur: "Pr. Abdelmounaim KERKRI",
     icone: Box,
     couleur: {
       bord: "border-l-violet-600",
@@ -114,9 +106,6 @@ const SESSIONS: Session[] = [
     },
     points: [
       "Prise en main de 3D Slicer, logiciel libre et gratuit d'imagerie médicale",
-     /* "Charger et explorer des images DICOM (scanner, IRM)",
-      "Segmentation manuelle et semi-automatique d'une structure anatomique",
-      "Reconstruction 3D, mesures et export du modèle (impression 3D)",*/
     ],
   },
 ];
@@ -147,7 +136,7 @@ const PUBLIC: { icone: LucideIcon; titre: string; texte: string }[] = [
 const INCLUS = [
   "Participation aux trois sessions (12 heures)",
   "Supports : cahier du participant, données et applications",
-  " Deux  déjeuners",
+  "Deux déjeuners",
   "Attestation de participation",
 ];
 
@@ -159,7 +148,7 @@ function mailtoInscription() {
     "Je souhaite m'inscrire aux ateliers pratiques d'ICSMAI 2027 (23-24 avril 2027, Saïdia).",
     "",
     "Nom et prénom :",
-    "Statut (doctorant, résident, médecin, enseignant-chercheur, autre) :",
+    "Statut (étudiant/doctorant, résident, médecin, enseignant-chercheur, autre) :",
     "Établissement :",
     "Téléphone :",
     "",
@@ -189,8 +178,7 @@ export default function HandsOnWorkshop() {
             Ateliers pratiques : l&apos;intelligence artificielle au service de la santé
           </h1>
           <p className="mt-5 max-w-3xl text-base text-slate-200 sm:text-lg">
-            Trois sessions de 4 heures pour passer de la théorie à la pratique : prédire une maladie, construire
-            des prédictions dignes de confiance, puis visualiser et reconstruire en 3D l&apos;imagerie médicale.
+            Trois sessions de 4 heures pour passer de la théorie à la pratique : prédire une maladie, construire des prédictions dignes de confiance, puis visualiser et reconstruire en 3D l&apos;imagerie médicale.
           </p>
 
           <dl className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -198,7 +186,7 @@ export default function HandsOnWorkshop() {
               { icone: CalendarDays, label: "Dates", valeur: "23 – 24 avril 2027" },
               { icone: MapPin, label: "Lieu", valeur: "Saïdia, Maroc" },
               { icone: Clock, label: "Volume", valeur: "3 sessions × 4 h" },
-              { icone: Wallet, label: "Frais", valeur: FRAIS },
+              { icone: Wallet, label: "Frais", valeur: `${FRAIS_ETUDIANT} / ${FRAIS_PRO}` },
             ].map(({ icone: Icone, label, valeur }) => (
               <div key={label} className="rounded-xl border border-white/15 bg-white/5 p-3 backdrop-blur-sm">
                 <dt className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-slate-300">
@@ -237,18 +225,14 @@ export default function HandsOnWorkshop() {
             </h2>
             <div className="mt-4 space-y-4 leading-relaxed text-slate-700">
               <p>
-                L&apos;intelligence artificielle entre à l&apos;hôpital : aide au diagnostic, prédiction du risque,
-                analyse d&apos;images. Mais entre un algorithme et une décision clinique fiable, il y a des étapes
-                que tout professionnel de santé doit comprendre : préparer les données, entraîner un modèle,
-                l&apos;évaluer avec les bons indicateurs, vérifier qu&apos;il reste fiable sur d&apos;autres
-                patients, et savoir exploiter l&apos;imagerie médicale.
+                L&apos;intelligence artificielle entre à l&apos;hôpital : aide au diagnostic, prédiction du risque, analyse d&apos;images. Mais entre un algorithme et une décision clinique fiable, il y a des étapes que tout professionnel de santé doit comprendre : préparer les données, entraîner un modèle, l&apos;évaluer avec les bons indicateurs, vérifier qu&apos;il reste fiable sur d&apos;autres patients, et savoir exploiter l&apos;imagerie médicale.
               </p>
               <p>
-                Ces ateliers vous font parcourir ces étapes <strong>sur votre propre ordinateur</strong>, à partir de
-                cas cliniques réalistes, encadrés par des enseignants-chercheurs du domaine.
+                Ces ateliers vous font parcourir ces étapes <strong>sur votre propre ordinateur</strong>, à partir de cas cliniques réalistes, encadrés par des enseignants-chercheurs du domaine.
               </p>
             </div>
           </div>
+
           <aside className="space-y-3 md:col-span-2">
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
               <h3 className="flex items-center gap-2 font-semibold">
@@ -256,14 +240,11 @@ export default function HandsOnWorkshop() {
                 Déroulé de chaque session
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>
-                  <strong>1 h </strong> de présentation des notions clés
-                </li>
-                <li>
-                  <strong>Environ 3 h</strong> de pratique guidée, seul ou en binôme
-                </li>
+                <li><strong>1 h </strong>de présentation des notions clés</li>
+                <li><strong>Environ 3 h</strong> de pratique guidée, seul ou en binôme</li>
               </ul>
             </div>
+
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
               <h3 className="flex items-center gap-2 font-semibold">
                 <Laptop className="h-4 w-4 text-emerald-700" aria-hidden />
@@ -313,9 +294,7 @@ export default function HandsOnWorkshop() {
                 className={`rounded-2xl border border-slate-200 border-l-4 ${s.couleur.bord} bg-white p-5 shadow-sm md:p-6`}
               >
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                  <span
-                    className={`inline-flex items-center gap-1.5 rounded-full ${s.couleur.pastille} px-3 py-1 text-xs font-bold uppercase tracking-wide text-white`}
-                  >
+                  <span className={`inline-flex items-center gap-1.5 rounded-full ${s.couleur.pastille} px-3 py-1 text-xs font-bold uppercase tracking-wide text-white`}>
                     <Icone className="h-3.5 w-3.5" aria-hidden />
                     Session {s.numero}
                   </span>
@@ -365,8 +344,19 @@ export default function HandsOnWorkshop() {
             {/* Frais */}
             <div className="rounded-2xl bg-white p-6 text-slate-900 md:col-span-2">
               <p className="text-sm font-semibold text-slate-500">Pack ateliers · 3 sessions</p>
-              <p className="mt-1 text-4xl font-extrabold tracking-tight">{FRAIS}</p>
-              <ul className="mt-5 space-y-2 text-sm">
+              
+              <div className="mt-2 space-y-3">
+                <div>
+                  <span className="text-3xl font-extrabold tracking-tight text-slate-900">{FRAIS_ETUDIANT}</span>
+                  <span className="text-sm font-semibold text-emerald-700 ml-2 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">Tarif Étudiant / Doctorant</span>
+                </div>
+                <div>
+                  <span className="text-3xl font-extrabold tracking-tight text-slate-900">{FRAIS_PRO}</span>
+                  <span className="text-sm font-semibold text-slate-700 ml-2 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">Tarif Professionnel / Standard</span>
+                </div>
+              </div>
+
+              <ul className="mt-6 space-y-2 text-sm border-t border-slate-100 pt-4">
                 {INCLUS.map((item) => (
                   <li key={item} className="flex gap-2">
                     <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
@@ -374,10 +364,10 @@ export default function HandsOnWorkshop() {
                   </li>
                 ))}
               </ul>
+
               <p className="mt-5 flex items-start gap-2 rounded-lg bg-amber-50 p-3 text-xs text-amber-900">
                 <Award className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
-                Places limitées pour garantir un encadrement de qualité : les inscriptions sont validées par ordre de
-                réception des paiements.
+                Places limitées pour garantir un encadrement de qualité : les inscriptions sont validées par ordre de réception des paiements. (Justificatif requis pour le tarif étudiant).
               </p>
             </div>
 
@@ -391,11 +381,11 @@ export default function HandsOnWorkshop() {
                   <div>
                     <h3 className="font-semibold">Envoyez votre demande d&apos;inscription</h3>
                     <p className="mt-1 text-sm text-slate-300">
-                      Par e-mail à <span className="font-medium text-white">{EMAIL}</span> avec vos nom et prénom,
-                      statut, établissement et téléphone.
+                      Par e-mail à <span className="font-medium text-white">{EMAIL}</span> avec vos nom et prénom, statut (préciser si étudiant/doctorant avec justificatif ou professionnel), établissement et téléphone.
                     </p>
                   </div>
                 </li>
+
                 <li className="flex gap-4">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500 font-bold text-slate-900">
                     2
@@ -413,15 +403,17 @@ export default function HandsOnWorkshop() {
                     </div>
                   </div>
                 </li>
+
                 <li className="flex gap-4">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500 font-bold text-slate-900">
                     3
                   </span>
                   <div>
                     <h3 className="font-semibold">Envoyez le justificatif de paiement</h3>
-                    <p className="mt-1 text-sm text-slate-300">Par e-mail ou par WhatsApp .</p>
+                    <p className="mt-1 text-sm text-slate-300">Par e-mail ou par WhatsApp (ainsi que votre carte d&apos;étudiant le cas échéant).</p>
                   </div>
                 </li>
+
                 <li className="flex gap-4">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500 font-bold text-slate-900">
                     4
@@ -443,6 +435,7 @@ export default function HandsOnWorkshop() {
                   <Send className="h-4 w-4" aria-hidden />
                   S&apos;inscrire par e-mail
                 </a>
+
                 <a
                   href={`https://wa.me/${WHATSAPP.replace("+", "")}`}
                   target="_blank"
@@ -453,6 +446,7 @@ export default function HandsOnWorkshop() {
                   Une question ? WhatsApp
                 </a>
               </div>
+
               <p className="mt-4 flex items-center gap-2 text-xs text-slate-400">
                 <Mail className="h-3.5 w-3.5" aria-hidden />
                 {EMAIL} · {WHATSAPP_AFFICHE}
@@ -464,5 +458,3 @@ export default function HandsOnWorkshop() {
     </div>
   );
 }
-
-
