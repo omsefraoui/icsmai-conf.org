@@ -10,16 +10,16 @@ export default function Registration() {
   const earlyBirdPlans = [
     {
       name: "Student",
-      price: { morocco: "1600 dhs", foreign: "250 euros" },
-      description: "For full-time students:  Registration ",
+      price: { morocco: "2000 dhs", foreign: "250 euros" },
+      description: "For full-time students:  Registration + lunch (or dinner) ",
       buttonText: "Register as Student",
     },
-    /*{
+    {
       name: "Student++",
-      price: { morocco: "2300 dhs", foreign: "300 euros" },
-      description: "For full-time students:  Registration + 1 night all inclusive",
+      price: { morocco: "2600 dhs", foreign: "300 euros" },
+      description: "For full-time students:  Registration + 1 night all inclusive + lunch and dinner)",
       buttonText: "Register as Student",
-    },*/
+    },
     /*{
       name: "Academia",
       price: { morocco: "3000 dhs", foreign: "350 euros" },
@@ -44,15 +44,15 @@ export default function Registration() {
   const regularPlans = [
     {
       name: "Student",
-      price: { morocco: "2100 dhs", foreign: "300 euros" },
+      price: { morocco: "2400 dhs", foreign: "300 euros" },
       description: "For full-time students:  Registration ",
       buttonText: "Register as Student",
     },
-   /* {
+    {
       name: "Student++",
-      price: { morocco: "2800 dhs", foreign: "350 euros" },
-      description: "For full-time students:  Registration + 1 night all inclusive",
-    },*/
+      price: { morocco: "3000 dhs", foreign: "350 euros" },
+      description: "For full-time students:  Registration + 1 night all inclusive + lunch and dinner",
+    },
     /*{
       name: "Academia",
       price: { morocco: "3500 dhs", foreign: "400 euros" },
