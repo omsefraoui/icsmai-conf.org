@@ -252,7 +252,7 @@ export default function HandsOnWorkshop() {
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 <li>Aucune connaissance en programmation</li>
-                <li>Un ordinateur portable (Windows, macOS ou Linux)</li>
+                <li>Un ordinateur portable </li>
                 <li>Des logiciels gratuits, avec une notice d&apos;installation envoyée après l&apos;inscription</li>
               </ul>
             </div>
@@ -367,7 +367,7 @@ export default function HandsOnWorkshop() {
 
               <p className="mt-5 flex items-start gap-2 rounded-lg bg-amber-50 p-3 text-xs text-amber-900">
                 <Award className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
-                Places limitées pour garantir un encadrement de qualité : les inscriptions sont validées par ordre de réception des paiements. (Justificatif requis pour le tarif étudiant).
+                Places limitées pour garantir un encadrement de qualité : les inscriptions sont validées par ordre de réception des paiements.
               </p>
             </div>
 
@@ -381,7 +381,7 @@ export default function HandsOnWorkshop() {
                   <div>
                     <h3 className="font-semibold">Envoyez votre demande d&apos;inscription</h3>
                     <p className="mt-1 text-sm text-slate-300">
-                      Par e-mail à <span className="font-medium text-white">{EMAIL}</span> avec vos nom et prénom, statut (préciser si étudiant/doctorant avec justificatif ou professionnel), établissement et téléphone.
+                      Par e-mail à <span className="font-medium text-white">{EMAIL}</span> avec vos nom et prénom, statut (préciser si étudiant/doctorant  ou professionnel), établissement et téléphone.
                     </p>
                   </div>
                 </li>
@@ -410,7 +410,7 @@ export default function HandsOnWorkshop() {
                   </span>
                   <div>
                     <h3 className="font-semibold">Envoyez le justificatif de paiement</h3>
-                    <p className="mt-1 text-sm text-slate-300">Par e-mail ou par WhatsApp (ainsi que votre carte d&apos;étudiant le cas échéant).</p>
+                    <p className="mt-1 text-sm text-slate-300">Par e-mail ou par WhatsApp.</p>
                   </div>
                 </li>
 
@@ -449,7 +449,7 @@ export default function HandsOnWorkshop() {
 
               <p className="mt-4 flex items-center gap-2 text-xs text-slate-400">
                 <Mail className="h-3.5 w-3.5" aria-hidden />
-                {EMAIL} · {WHATSAPP_AFFICHE}
+                {EMAIL} · {/*{WHATSAPP_AFFICHE}*/}
               </p>
             </div>
           </div>
