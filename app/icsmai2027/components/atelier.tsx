@@ -30,8 +30,8 @@ import {
  * Tout le contenu modifiable (frais, dates, animateurs, contacts) est regroupé ci-dessous.
  */
 
-const FRAIS_ETUDIANT = "2 400 DH";
-const FRAIS_PRO = "3 000 DH";
+const FRAIS_ETUDIANT = "1 500 DH";
+const FRAIS_PRO = "2 000 DH";
 const EMAIL = "icsmai.alsi@gmail.com";
 const WHATSAPP = "+212 671026271";
 const WHATSAPP_AFFICHE = "+212 671026271";
@@ -149,6 +149,7 @@ function mailtoInscription() {
     "",
     "Nom et prénom :",
     "Statut (étudiant/doctorant, résident, médecin, enseignant-chercheur, autre) :",
+    "Inscrit à la conférence ICSMAI 2027 (Oui/Non) :",
     "Établissement :",
     "Téléphone :",
     "",
@@ -345,14 +346,19 @@ export default function HandsOnWorkshop() {
             <div className="rounded-2xl bg-white p-6 text-slate-900 md:col-span-2">
               <p className="text-sm font-semibold text-slate-500">Pack ateliers · 3 sessions</p>
               
-              <div className="mt-2 space-y-3">
+              <div className="mt-2 space-y-4">
                 <div>
                   <span className="text-3xl font-extrabold tracking-tight text-slate-900">{FRAIS_ETUDIANT}</span>
-                  <span className="text-sm font-semibold text-emerald-700 ml-2 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">Tarif Étudiant / Doctorant</span>
+                  <div className="mt-1">
+                    <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 block sm:inline-block">Tarif Étudiant / Doctorant</span>
+                    <span className="text-xs font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full border border-sky-200 mt-1 sm:mt-0 sm:ml-1 block sm:inline-block">⚡ 60% de réduction si inscrit à la conférence ICSMAI 2027</span>
+                  </div>
                 </div>
-                <div>
+                <div className="pt-2 border-t border-slate-100">
                   <span className="text-3xl font-extrabold tracking-tight text-slate-900">{FRAIS_PRO}</span>
-                  <span className="text-sm font-semibold text-slate-700 ml-2 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">Tarif Professionnel / Standard</span>
+                  <div className="mt-1">
+                    <span className="text-xs font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">Tarif Professionnel / Standard</span>
+                  </div>
                 </div>
               </div>
 
@@ -381,7 +387,7 @@ export default function HandsOnWorkshop() {
                   <div>
                     <h3 className="font-semibold">Envoyez votre demande d&apos;inscription</h3>
                     <p className="mt-1 text-sm text-slate-300">
-                      Par e-mail à <span className="font-medium text-white">{EMAIL}</span> avec vos nom et prénom, statut (préciser si étudiant/doctorant  ou professionnel), établissement et téléphone.
+                      Par e-mail à <span className="font-medium text-white">{EMAIL}</span> avec vos nom et prénom, statut (préciser si étudiant/doctorant ou professionnel), établissement, téléphone et mentionnez si vous êtes inscrit à la conférence ICSMAI 2027.
                     </p>
                   </div>
                 </li>
@@ -449,7 +455,7 @@ export default function HandsOnWorkshop() {
 
               <p className="mt-4 flex items-center gap-2 text-xs text-slate-400">
                 <Mail className="h-3.5 w-3.5" aria-hidden />
-                {EMAIL} · {/*{WHATSAPP_AFFICHE}*/}
+                {EMAIL}
               </p>
             </div>
           </div>
