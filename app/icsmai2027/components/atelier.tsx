@@ -416,7 +416,7 @@ export default function HandsOnWorkshop() {
                   </span>
                   <div>
                     <h3 className="font-semibold">Envoyez le justificatif de paiement</h3>
-                    <p className="mt-1 text-sm text-slate-300">Par e-mail ou par WhatsApp.</p>
+                    <p className="mt-1 text-sm text-slate-300">Par e-mail ou par WhatsApp +212 615148509.</p>
                   </div>
                 </li>
 
