@@ -119,7 +119,7 @@ export default function Publications() {
                       <span className="font-semibold text-primary">
                         Springer Book Proceedings
                       </span>
-                      is currently under discussion
+                         , is currently under discussion
                     </p>
                   </div>
 
