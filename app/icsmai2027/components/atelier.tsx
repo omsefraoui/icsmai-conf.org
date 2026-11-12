@@ -33,8 +33,8 @@ import {
 const FRAIS_ETUDIANT = "1 500 DH";
 const FRAIS_PRO = "2 000 DH";
 const EMAIL = "icsmai.alsi@gmail.com";
-const WHATSAPP = "+212 671026271";
-const WHATSAPP_AFFICHE = "+212 671026271";
+const WHATSAPP = "+212 615148509";
+const WHATSAPP_AFFICHE = "+212 615148509";
 
 const BANQUE = {
   titulaire: "Association Intelligence Artificielle et Développement Durable",
