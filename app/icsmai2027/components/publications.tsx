@@ -114,10 +114,12 @@ export default function Publications() {
                   {/* Description */}
                   <div className="text-center space-y-4">
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                      All reviewed and accepted papers will be published in{" "}
+                         Publication of all reviewed and accepted papers in
+                        {/* All reviewed and accepted papers will be published in */}{" "}
                       <span className="font-semibold text-primary">
-                        Springer Indexed Book Proceedings
+                        Springer Book Proceedings
                       </span>
+                      is currently under discussion
                     </p>
                   </div>
 
