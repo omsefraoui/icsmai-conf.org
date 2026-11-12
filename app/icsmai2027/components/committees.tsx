@@ -184,7 +184,7 @@ export default function Committees() {
       "F. SADIKOGHLU, Univ. Nicosia, Cyprus",
       //"M. FARHAT, UWI, Mona, FST, Jamaica",
       "F. BENKHALDOUN, Sorbonne Paris Nord University, France",
-      //"M. AZIZI, ESTO, UMP, Oujda, Morocco",
+      "M. AZIZI, ESTO, UMP, Oujda, Morocco",
       "A. TALBI, Centrale Lille, France",
       //"M. KODAD, ESTO, UMP, Oujda, Morocco",
       "A. KERKOUR ELMIAD, FS, Oujda, Morocco",
