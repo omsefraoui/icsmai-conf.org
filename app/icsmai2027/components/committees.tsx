@@ -98,7 +98,13 @@ export default function Committees() {
     ],*/
     "STUDENT COMMITTEE": [
       //"R. Ghafir, UMP, Oujda, Morocco",
-      "R. Baba, UMP, Oujda, Morocco",
+      "Talhaoui	Anas, ENSAO, Oujda, Morocco",
+      "Bouri	Aya, ENSAO, Oujda, Morocco",
+      "El-houadi	Ayoub, ENSAO, Oujda, Morocco",
+      "Benouda	Asame, ENSAO, Oujda, Morocco",
+      "Redouane Baba, ENSAO, Oujda, Morocco",
+
+      
       /*"Y. EL KANEB, UMP, Oujda, Morocco",
       "M. RAHMOUNI, UMP, Oujda, Morocco",
       "I. CHAHID, UMP, Oujda, Morocco",
