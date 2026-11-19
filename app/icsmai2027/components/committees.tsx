@@ -29,7 +29,7 @@ export default function Committees() {
       "Pr. Khalid HADDOUCH, ENSAF, FEZ, Morocco",
       "Pr. Réda YAHIAOUI, Marie and louis Pasteur University, France",*/
       "Pr. Omar ELMAZRIA, Université de lorraine , Nancy, France",
-      "E-M. AR-REYOUCHI, SNRT, Morocco",
+      "E-M. AR-REYOUCHI, UNED, Madrid, Spain",
       
       //"K. GHOUMID, ENSAO, Med 1st University, Oujda, Morocco",
       //"M. SERRHINI, FSO, Med 1st University, Oujda, Morocco",
@@ -132,6 +132,8 @@ export default function Committees() {
       "Ranadheer Charabuddi  Nutrien, USA",
       "Bhavnish Walia,  Amazon,  New York City  USA",
       "Banani Mohapatra,  Walmart, San Francisco, USA",
+      "Clara Pérez Molina, UNED, Madrid, Spain",
+      "Sergio Martín, UNED, Madrid, Spain",
       "Chaitanya Reddy, Dallas , USA",
       "Naveen Kolli,  Bank of America Texas,  USA",
       //"O. BARAKAT, Franche-Comté Univ. Besançon, France",
@@ -173,7 +175,7 @@ export default function Committees() {
       "E. YUSIFLI ATISOL Paris, France",
       "M. ABBOUD-ABID ENP, Oran, Algeria",
       //"H. BOUROUINA, QPPC, Normal School Boussada, Algeria",
-      "E-M. AR-REYOUCHI, SNRT, Morocco",
+      "E-M. AR-REYOUCHI, UNED, Madrid, Spain & SNRT, Morocco",
       //"N. DERGUINI, ENS de Kouba, Algeria",
       //"F. ABDI, FSDM, Fez, Morocco",
       "M. KADIC, Marie and louis Pasteur University, FEMTO-ST, France",
