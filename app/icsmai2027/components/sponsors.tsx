@@ -18,23 +18,29 @@ export default function Sponsors() {
           </h2>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-          {SPONSORS.map((sponsor) => (
-            <motion.div
-              key={sponsor}
-              whileHover={{ scale: 1.06 }}
-              transition={{ duration: 0.2 }}
-              className="flex items-center justify-center h-12 opacity-75 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-200"
-            >
-              <Image
-                src={`/images/sponsors/${sponsor}.png`}
-                alt={`Sponsor ${sponsor}`}
-                width={160}
-                height={64}
-                className="max-h-11 w-auto object-contain"
-              />
-            </motion.div>
-          ))}
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+          {SPONSORS.map((sponsor) => {
+            const isTallLogo = sponsor === 17 || sponsor === 8
+
+            return (
+              <motion.div
+                key={sponsor}
+                whileHover={{ scale: 1.06 }}
+                transition={{ duration: 0.2 }}
+                className="flex items-center justify-center h-20 opacity-95 hover:opacity-100 transition-opacity duration-200"
+              >
+                <Image
+                  src={`/images/sponsors/${sponsor}.png`}
+                  alt={`Sponsor ${sponsor}`}
+                  width={200}
+                  height={80}
+                  className={`w-auto object-contain ${
+                    isTallLogo ? "max-h-20" : "max-h-14"
+                  }`}
+                />
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
