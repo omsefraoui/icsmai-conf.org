@@ -155,6 +155,7 @@ export default function Committees() {
       "O. Sefraoui, ENSAO, Oujda, Morocco",
       "O. ELMAZRIA, Université de lorraine , Nancy, France",
       "D. Djeldjli, Université de Lorraine, Nancy, France",
+      "M. U. Yousaf, Universit Tunku Abdul Rahman, Malaysia ",
       "H. Bouali, ESTO, Oujda, Morocco",
       "M.A. Madani, ENSAO, Oujda, Morocco",
       "D. Bahia, FSO, Oujda, Morocco",
