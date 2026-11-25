@@ -53,6 +53,7 @@ export default function Committees() {
       "M. Zeryouh, ENSAO, Oujda, Morocco",
       "H. Chehabi, ENSAO, Oujda, Morocco",
       "M. Saidi, Ex S/G santé publique, Oujda, Morocco",
+      "E-M. AR-REYOUCHI, UNED, Madrid, Spain",
       //"H. Benhaddouh, FMPO, Oujda, Morocco",
       //"Y. Bentata, FMPO, Oujda, Morocco",
       //"A. KERKOUR ELMIAD, FS, Oujda, Morocco",
