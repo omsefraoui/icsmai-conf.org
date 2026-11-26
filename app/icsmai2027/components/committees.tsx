@@ -139,6 +139,7 @@ export default function Committees() {
       "Naveen Kolli,  Bank of America Texas,  USA",
       //"O. BARAKAT, Franche-Comté Univ. Besançon, France",
       "A. Moustefaoui, Marie and louis Pasteur University, France",
+      "Dr Najam Ul Hasan, Sheffield Hallam University, United Kingdom",
       "B. ALAOUI-SOSSÉ, Marie and louis Pasteur University, France",
       "K. CETINKAYA, Karabuk University, Turkey",
       "Divyadharshini Karthikeyan, Amazon, Canada",
