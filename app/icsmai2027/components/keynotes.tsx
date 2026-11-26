@@ -28,6 +28,14 @@ export default function Keynotes() {
       bio: "  Omar Elmazria is a Distinguished Professor at the University of Lorraine, conducting his research at the Jean Lamour Institute (IJL) and teaching at Polytech Nancy. An Emeritus Member of the Institut Universitaire de France (IUF), he has built a rich international career as a visiting professor in Canada, China, and the United States. A renowned specialist in Surface Acoustic Wave (SAW) devices, his current research focuses on developing wireless sensor technologies for industrial and biomedical applications, leading several major funded projects (ANR, DGA, SATT Sayens). His scientific excellence is reflected in more than 160 international peer-reviewed papers, 4 patents, and over 120 conference communications, a career honored by prestigious accolades including the URSI 2017 and Lorraine Region 2018 awards.", 
       topic: ".........",
     },
+       {
+      name: "Pr. Najam Ul Hasan",
+      organization: "Sheffield Hallam University",
+      location: "Sheffield, United Kingdom",
+     // image: "/placeholder.svg?height=400&width=400",
+      image: "/images/keynotes/speaker_36.jpg?height=400&width=400",
+      bio: " Dr. Najam Ul Hasan is a Senior Lecturer in Smart Computing within the School of Computing and Digital Technologies at Sheffield Hallam University, UK. He holds a Ph.D. in Information and Communication Engineering from Sejong University, South Korea, and brings over 18 years of international academic, teaching, and research experience across the UK, Oman, South Korea, and Pakistan. Prior to joining Sheffield Hallam University, he served as an Associate Professor and Chairperson of the Department of Electrical and Computer Engineering at Dhofar University, Oman, and held postdoctoral research fellowships at Robert Gordon University (UK) and Yonsei University (South Korea).   His research focuses on Artificial Intelligence in Healthcare, Internet of Medical Things (IoMT), Edge-Fog-Cloud Computing, Digital Twins, Cyber-Physical Systems, and 5G/6G Next-Generation Wireless Networks. He has authored over 75 peer-reviewed publications in leading international journals and conferences, accumulating more than 1,530 citations (h-index: 22), and is a recipient of multiple Best Paper Awards (IEEE ISSI 2024, 15th Int. Conf. on IoT 2025). A Senior Member of IEEE and Fellow of Advance HE (FHEA), Dr. Ul Hasan also serves on the editorial boards of several international journals and actively leads funded research projects in real-time healthcare monitoring and federated edge intelligence. ",
+    }, 
      {
       name: "Pr. Moulay AKHLOUFI",
       organization: "Université de Moncton",
